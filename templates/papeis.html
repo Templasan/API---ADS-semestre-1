@@ -1,0 +1,154 @@
+{% extends 'base2.html' %}
+
+<!--Título-->
+{% block title %}Papéis do Time{% endblock %}
+
+<!--Botão Sidebar-->
+
+{% block sidebar %}
+<a href="#intro" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-people-group fa-fw me-2"></i></i><span>Papéis do grupo</span></a>
+<a href="#master" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-user fa-fw me-2"></i><span>Scrum Master</span></a>
+<a href="#PO" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-shopping-bag fa-fw me-2"></i><span>Product Owner</span></a>
+<a href="#devteam" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-users fa-fw me-2"></i><span>Dev Team</span></a>
+<a href="#exercicios" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-check fa-fw me-2"></i><span>Exercícios</span></a>
+{% endblock %}
+
+<!--Conteúdo-->
+{% block content %}
+<!-- Introdução -->
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main bg-gray" style="margin-top: 40px;" id="intro">
+    <div class="col-lg-5">
+        <h2 class="font-weight-light">Papéis do grupo</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+    <div class="col-lg-5"><img class="img-fluid rounded pb-4 mb-lg-0" src="/static/images/papeisdogrupo.png" alt="..." /></div>
+</div>
+
+<!-- Master -->
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="master">
+    <div class="col-lg-5">
+        <h2 class="font-weight-light">Master (Scrum Master)</h3>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/images/master.png" alt="..." /></div>
+</div>
+
+
+<!-- P.O. -->
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="PO">
+    <div class="col-lg-5">
+        <h2 class="font-weight-light">P.O. (Product Owner)</h3>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/images/PO.png" alt="..." /></div>
+</div>
+
+<!-- Dev Team -->
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="devteam">
+    <div class="col-lg-5">
+        <h2 class="font-weight-light">Dev Team (Development Team)</h3>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/images/devteam.png" alt="..." /></div>
+</div>
+
+<!-- Quiz -->
+<div class="container-fluid main col-lg-10" id="exercicios">
+    <div class="text-center">
+        <h3>Teste seu Conhecimento</h3>
+    </div>
+
+    <!-- Pergunta 1 -->
+    <div class="card border-secondary mb-4">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 1</span>
+        </div>
+        <div class="card-body">
+            <p>Qual é a função do Product Owner no Scrum?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                <label class="form-check-label" for="q1_r1">
+                    Responsável por liderar as reuniões diárias do Scrum.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                <label class="form-check-label" for="q1_r2">
+                    Encarregado de definir os critérios de aceitação das histórias de usuário.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                <label class="form-check-label" for="q1_r3">
+                    Responsável por garantir que o time Scrum atenda às expectativas dos stakeholders.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                <label class="form-check-label" for="q1_r4">
+                    Encarregado de manter a equipe motivada e produtiva durante o sprint.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="card border-secondary mb-4">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 2</span>
+        </div>
+        <div class="card-body">
+            <p>Qual é o papel do Scrum Master no método Scrum?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                <label class="form-check-label" for="q1_r1">
+                    O Scrum Master é responsável por definir as metas do projeto.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                <label class="form-check-label" for="q1_r2">
+                    O Scrum Master é o líder técnico da equipe de desenvolvimento.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                <label class="form-check-label" for="q1_r3">
+                    O Scrum Master protege a equipe de desenvolvimento de interferências externas.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                <label class="form-check-label" for="q1_r4">
+                    O Scrum Master é responsável por aprovar todas as mudanças no produto.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
