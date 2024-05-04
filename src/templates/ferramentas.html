@@ -6,13 +6,13 @@
 <!--Botão Sidebar-->
 
 {% block sidebar %}
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-people-group fa-fw me-2"></i></i><span>Ferramentas e Artefatos</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-person-running fa-fw me-2"></i><span>Product Backlog</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-users-gear fa-fw me-2"></i><span>Sprint Backlog</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-calendar-days fa-fw me-2"></i><span>User Stories</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-backward fa-fw me-2"></i><span>Planning Poker</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-rotate fa-fw me-2"></i><span>Burndown Chart</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-check fa-fw me-2"></i><span>Exercícios</span></a>
+<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-pen fa-fw me-2"></i></i><span>Ferramentas e Artefatos</span></a>
+<a href="#backlogP" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-handshake fa-fw me-2"></i><span>Product Backlog</span></a>
+<a href="#backlogS" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-list fa-fw me-2"></i><span>Sprint Backlog</span></a>
+<a href="#US" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-user-check fa-fw me-2"></i><span>User Stories</span></a>
+<a href="#poker" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-dice fa-fw me-2"></i><span>Planning Poker</span></a>
+<a href="#burndown" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-chart-line fa-fw me-2"></i><span>Burndown Chart</span></a>
+<a href="#exercicios" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-check fa-fw me-2"></i><span>Exercícios</span></a>
 {% endblock %}
 
 <!--Conteúdo-->
@@ -29,7 +29,7 @@
 </div>
 
 <!--Product Backlog-->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="backlogP">
     <div class="col-lg-5">
         <h2 class="font-weight-light">Product Backlog</h3>
         <p>
@@ -41,7 +41,7 @@
 
 
 <!-- Sprint Backlog -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="backlogS">
     <div class="col-lg-10">
         
         <h2 class="font-weight-light">Sprint Backlog</h3>
@@ -53,7 +53,7 @@
 </div>
 
 <!-- User Stories -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="US">
     <div class="col-lg-5">
         <h2 class="font-weight-light">User Stories</h3>
         <p>
@@ -64,7 +64,7 @@
 </div>
 
 <!-- Planning Poker -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="poker">
     <div class="col-lg-5">
         <h2 class="font-weight-light">Planning Poker</h3>
         <p>
@@ -75,7 +75,7 @@
 </div>
 
 <!-- Burndown -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="burndown">
     <div class="col-lg-10">
         <h2 class="font-weight-light">Burndown Chart</h3>
         <p>
@@ -83,5 +83,96 @@
         </p>
     </div>
     <div class="col-lg-5"><img class="img-fluid rounded pb-4 mb-lg-0" src="/static/images/burndown.png" alt="..." /></div>
+</div>
+
+<!-- Quiz -->
+<div class="container-fluid main col-lg-10" id="exercicios">
+    <div class="text-center">
+        <h3>Teste seu Conhecimento</h3>
+    </div>
+
+    <!-- Pergunta 1 -->
+    <div class="card border-secondary mb-4">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 1</span>
+        </div>
+        <div class="card-body">
+            <p>Nisi nobis aspernatur provident, inventore minus quos?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                <label class="form-check-label" for="q1_r1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                <label class="form-check-label" for="q1_r2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                <label class="form-check-label" for="q1_r3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                <label class="form-check-label" for="q1_r4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="card border-secondary mb-4 ">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 2</span>
+        </div>
+        <div class="card-body">
+            <p>Nisi nobis aspernatur provident, inventore minus quos?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
+                <label class="form-check-label" for="q2_r1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
+                <label class="form-check-label" for="q2_r2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
+                <label class="form-check-label" for="q2_r3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
+                <label class="form-check-label" for="q2_r4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

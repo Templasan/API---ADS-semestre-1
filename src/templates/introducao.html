@@ -6,11 +6,11 @@
 <!--Botão Sidebar-->
 
 {% block sidebar %}
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-people-group fa-fw me-2"></i></i><span>Introdução</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-person-running fa-fw me-2"></i><span>Por que usar Scrum?</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-users-gear fa-fw me-2"></i><span>Pilares do Scrum</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-calendar-days fa-fw me-2"></i><span>Metodologia Ágil</span></a>
-<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-check fa-fw me-2"></i><span>Exercícios</span></a>
+<a href="#" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-star fa-fw me-2"></i></i><span>Introdução</span></a>
+<a href="#porque" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-question fa-fw me-2"></i><span>Por que usar Scrum?</span></a>
+<a href="#pilar" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-landmark fa-fw me-2"></i><span>Pilares do Scrum</span></a>
+<a href="#agil" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-jet-fighter fa-fw me-2"></i><span>Metodologia Ágil</span></a>
+<a href="#exercicios" class="list-group-item list-group-item-action bg-lightgray"><i class="fas fa-check fa-fw me-2"></i><span>Exercícios</span></a>
 {% endblock %}
 
 <!--Conteúdo-->
@@ -27,18 +27,18 @@
 </div>
 
 <!-- O porquê de usar Scrum -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="porque">
     <div class="col-lg-5">
         <h2 class="font-weight-light">Por que usar Scrum?</h3>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
     </div>
-    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/images/porque.png" alt="..." /></div>
 </div>
 
 <!-- Pilares do Scrum -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="pilar">
     <div class="col-lg-5">
         
         <h2 class="font-weight-light">Pilares do Scrum</h3>
@@ -46,17 +46,114 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
     </div>
-    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+    <div class="col-lg-5">
+        <div class="video_wrapper">
+        <iframe
+            src="https://www.youtube.com/embed/Tmjlf-o9WB0?si=FUhrYb0WhRjcVaFe">
+        </iframe>
+        </div>
+    </div>
 </div>
 
 <!-- Metodologia Ágil -->
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main">
+<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main" id="agil">
     <div class="col-lg-5">
         <h2 class="font-weight-light">Metodologia Ágil</h3>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates voluptatum maiores quae blanditiis distinctio ea iusto. Dignissimos nihil, hic porro iusto magnam ex? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, saepe. Ipsum, commodi numquam praesentium labore eaque voluptate magnam doloribus atque? Harum recusandae temporibus nulla itaque est iusto autem deserunt placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
     </div>
-    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+    <div class="col-lg-5"><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/images/agil.png" alt="..." /></div>
+</div>
+
+<!-- Quiz -->
+<div class="container-fluid main col-lg-10" id="exercicios">
+    <div class="text-center">
+        <h3>Teste seu Conhecimento</h3>
+    </div>
+
+    <!-- Pergunta 1 -->
+    <div class="card border-secondary mb-4">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 1</span>
+        </div>
+        <div class="card-body">
+            <p>Nisi nobis aspernatur provident, inventore minus quos?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                <label class="form-check-label" for="q1_r1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                <label class="form-check-label" for="q1_r2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                <label class="form-check-label" for="q1_r3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                <label class="form-check-label" for="q1_r4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="card border-secondary mb-4 ">
+    
+        <div class="card-header bg-blue text-white">
+        <span>Pergunta 2</span>
+        </div>
+        <div class="card-body">
+            <p>Nisi nobis aspernatur provident, inventore minus quos?</p>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
+                <label class="form-check-label" for="q2_r1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
+                <label class="form-check-label" for="q2_r2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
+                <label class="form-check-label" for="q2_r3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
+                <label class="form-check-label" for="q2_r4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </label>
+            </div>
+            <div class="text-center mt-3">
+                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

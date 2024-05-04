@@ -1,23 +1,22 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 
 <!--Título-->
 {% block title %}Avaliação{% endblock %}
 
 {% block content %}
 
-<div class="row gx-4 gx-lg-5 align-items-center justify-content-center py-3 container-fluid main bg-gray" style="margin-top: 40px;" id="intro">
-    <div class="col-lg-5">
+<div class=" gx-4 gx-lg-5 py-3 container-fluid text-center bg-gray" style="margin-top: 40px;" id="intro">
+    <div>
         <h2 class="font-weight-light">Teste seu Conhecimento</h2>
         <p>
             Após aprender sobre o conteúdo do Método Scrum, responda esse questionário para testar seu conhecimento.
         </p>
     </div>
-    <div class="col-lg-5"><img class="img-fluid rounded pb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+    <div><img class="img-fluid rounded pb-4 mb-lg-0" src="/static/images/avaliacao.png" alt="..." width="300" height="300"/></div>
 </div>
 
-
 <!-- Quiz -->
-<div class="container-fluid col-lg-10" id="exercicios">
+<div class="container-fluid col-lg-9 mt-4" id="exercicios">
     <div class="text-center">
         <h3>Questionário</h3>
     </div>
@@ -216,7 +215,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center mt-3">
+    <div class="text-center mt-3 mb-5">
         <button type="button ms-auto" class="btn btn-primary">Validar</button>
     </div>
 </div>
