@@ -2,52 +2,6 @@
 
 Trabalho API de ADS do 1º semestre da FATEC.
 
-<h2 align="center"><samp>TIME</samp></h2>
-
-<table align="center">
-  <tr>
-    <th><b>Nome</b></th>
-    <th><b>Função</b></th>
-    <th><b>Github</b></th>
-  </tr>
-  <tr>
-    <td>Humberto Ishii Silva</td>
-    <td>PO</td>
-    <td><a href="https://github.com/HumbertoIshii">Github</a></td>
-  </tr>
-  <tr>
-    <td>João Victor Dos Reis Santos</td>
-    <td>SM</td>
-    <td><a href="https://github.com/Templasan">Github</a></td>
-  </tr>
-  <tr>
-    <td>Luiz Felipe Monteiro Dos Santos</td>
-    <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
-  </tr>
-  <tr>
-    <td>Guilherme Henrique Cassula</td>
-    <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
-  </tr>
-  <tr>
-    <td>Matheus Di Sabatino Pires</td>
-    <td>ST</td>
-    <td><a href="https://github.com/Omathzao">Github</a></td>
-  </tr>
-  <tr>
-    <td>Léo de Paula Naito</td>
-    <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
-  </tr>
-    <tr>
-    <td>Pablo</td>
-    <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
-  </tr>
-  
-</table>
-
 <h2 align="center"><samp>Tema do Semestre</samp></h2>
 Aplicação Web de instruções para desenvolvimento de projetos ágeis (SCRUM) na área de TI
 
@@ -67,39 +21,6 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
 <h1 align="center"><samp>Tecnologias utilizadas</samp></h1>
 
 ![](/readme/TecnologiaUtilizadas.png)
-
-<table align="center">
-  <tr>
-    <th><b>Front-end</b></th>
-    <th><b>Back-end</b></th>
-    <th><b>Ferramentas</b></th>
-    <th><b>Comunicação</b></th>
-  </tr>
-  <tr>
-    <td>HTML</td>
-    <td>Python</td>
-    <td>Visual Studio Code</td>
-    <td>Whatsapp</td>
-  </tr>
-  <tr>
-    <td>CSS</td>
-    <td>Flask</td>
-    <td>Figma</td>
-    <td>Discord</td>
-  </tr>
-  <tr>
-    <td>Bootstrap</td>
-    <td></td>
-    <td>Git</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>Github</td>
-    <td></td>
-  </tr>
-</table>
 
 <h2 align="center"><samp>PRODUCT BACKLOG</samp></h2>
 
@@ -184,7 +105,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>base.html</td>
     <td>Como um membro da equipe, desenvolver os elementos em comum entre as páginas em um arquivo base para reduzir códigos repetidos.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>10</td>
@@ -192,7 +113,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Pagina home</td>
     <td>Como colaborador da empresa, eu quero uma página inicial desenvolvida em html.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>11</td>
@@ -200,7 +121,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Pagina de papéis de um time</td>
     <td>Como colaborador da empresa, eu quero uma página dos papéis da equipe desenvolvida em html.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>12</td>
@@ -208,7 +129,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Página dos eventos do scrum</td>
     <td>Como colaborador da empresa, eu quero uma página de eventos do scrum desenvolvida em html.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>13</td>
@@ -216,7 +137,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Página de artefatos e ferramentas</td>
     <td>Como colaborador da empresa, eu quero uma página para avaliação desenvolvida em html.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>14</td>
@@ -224,7 +145,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Página de avaliação</td>
     <td>Como colaborador da empresa, eu quero uma página sobre artefatos e ferramentas desenvolvida em html.</td>
     <td>2</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
     <td>15</td>
@@ -427,6 +348,116 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
 
 <h4 align="center"><a href="https://youtu.be/bF1j0FQ-05o">Assistir pelo Youtube</a></h4>
 
+
+
 https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865-4047-be1f-37d4581ec30a
 
 <p>Na primeira sprint entregamos um protótipo navegável do site desenvolvido no Figma. Ele permite explorar o layout e funcionalidades do site, incluindo página inicial, seção educacional sobre SCRUM, área de exercícios e página de avaliação. Essa representação interativa facilita discussões sobre design e usabilidade para o próximo estágio de desenvolvimento.</p>
+
+<h2 align="center"><samp>2° SPRINT BACKLOG</samp></h2>
+
+<details>
+
+<table>
+  <tr>
+	<td>Rank</td>
+	<td>Prioridade</td>
+	<td>User Story</td>
+	<td>Status</td>
+  </tr>
+  <tr>
+	<td>9</td>
+	<td>Alta</td>
+	<td>Como um membro da equipe, desenvolver os elementos em comum entre as páginas em um arquivo base para reduzir códigos repetidos..</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>10</td>
+	<td>Alta</td>
+	<td>Como colaborador da empresa, eu quero uma página inicial desenvolvida em html..</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>11</td>
+	<td>Alta</td>
+	<td>Como colaborador da empresa, eu quero uma página dos papéis da equipe desenvolvida em html.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>12</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero uma página de eventos do scrum desenvolvida em html.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>13</td>
+	<td>Baixa</td>
+	<td>Como colaborador da empresa, eu quero uma página para avaliação desenvolvida em html.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>14</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero uma página sobre artefatos e ferramentas desenvolvida em html.</td>
+	<td>Concluído</td>
+  </tr>
+  
+</table>
+
+</details>
+
+<h2 align="center">Protótipo no Figma</h2>
+
+
+
+https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd-490a-95b8-b2fd715e697c
+
+<p>Na segunda sprint entregamos protótipo do site desenvolvido no Figma funcionando em HTML.</p>
+
+
+
+<h2 align="center"><samp>TIME</samp></h2>
+
+<table align="center">
+  <tr>
+    <th><b>Nome</b></th>
+    <th><b>Função</b></th>
+    <th><b>Github</b></th>
+  </tr>
+  <tr>
+    <td>Humberto Ishii Silva</td>
+    <td>PO</td>
+    <td><a href="https://github.com/HumbertoIshii">Github</a></td>
+  </tr>
+  <tr>
+    <td>João Victor Dos Reis Santos</td>
+    <td>SM</td>
+    <td><a href="https://github.com/Templasan">Github</a></td>
+  </tr>
+  <tr>
+    <td>Luiz Felipe Monteiro Dos Santos</td>
+    <td>ST</td>
+    <td><a href="https://github.com/">Github</a></td>
+  </tr>
+  <tr>
+    <td>Guilherme Henrique Cassula</td>
+    <td>ST</td>
+    <td><a href="https://github.com/">Github</a></td>
+  </tr>
+  <tr>
+    <td>Matheus Di Sabatino Pires</td>
+    <td>ST</td>
+    <td><a href="https://github.com/Omathzao">Github</a></td>
+  </tr>
+  <tr>
+    <td>Léo de Paula Naito</td>
+    <td>ST</td>
+    <td><a href="https://github.com/">Github</a></td>
+  </tr>
+    <tr>
+    <td>Pablo</td>
+    <td>ST</td>
+    <td><a href="https://github.com/">Github</a></td>
+  </tr>
+  
+</table>
