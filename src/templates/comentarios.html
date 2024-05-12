@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comentários</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Comentarios{% endblock %}
+
+{% block content %}
+<div style="margin-top: 60px;">
     <h1>Comentários</h1>
     <ul>
         {% for comentario in comentarios %}
@@ -15,5 +13,5 @@
         </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
+{% endblock %}

@@ -26,7 +26,7 @@ def submit_comment():
     db.session.commit()
     
     flash('Seu comentário foi enviado com sucesso!', 'success')
-    return redirect(url_for('index'))
+    return redirect(url_for('/commentarios'))
 
 @app.route('/')
 def index():
@@ -52,10 +52,10 @@ def ferramentas():
 def avaliacao():
     return render_template('avaliacao.html')
 
+@app.route('/comentarios')
+def comment():
+    comentarios = Comentario.query.all()
+    return render_template('comentarios.html', comentarios=comentarios)
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-@app.route('/')
-def base():
-    comentarios = Comentario.query.all()
-    return render_template('index.html', comentarios=comentarios)
