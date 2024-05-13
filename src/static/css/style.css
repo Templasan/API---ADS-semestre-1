@@ -95,13 +95,16 @@ html {
 /* Scroll lateral da navbar de baixo para mobile */
 .mobile{
     margin-top: -1px; /* Remove Vão entre sidebars */
-    overflow-x: scroll;
+    overflow-x: hidden; /* Esconde Scrollbar Crome*/
     overflow-y: hidden; /* PODE ALTERAR PARA "hidden" CASO NÃO QUEIRA SCROLL VERTICAL */
     white-space: nowrap; /* IMPEDE A QUEBRA DE LINHA */
-    scrollbar-width: none; /* Esconde Scrollbar */
+    scrollbar-width: none; /* Esconde Scrollbar Firefox e Opera*/
 }
 
 @media (max-width: 500px) {
+  .mobile{
+    overflow-x: scroll; /* Scroll Horizontal Mobile */
+  }
   .mobile ul{
     margin-left: 290px; /* Gambiarra para o scroll não comer a introdução */
   }

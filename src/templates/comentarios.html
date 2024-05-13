@@ -1,17 +1,45 @@
 {% extends "base.html" %}
 
-{% block title %}Comentarios{% endblock %}
+{% block title %}Comentários{% endblock %}
 
 {% block content %}
-<div style="margin-top: 60px;">
-    <h1>Comentários</h1>
-    <ul>
-        {% for comentario in comentarios %}
-        <li>
-            <strong>Usuário:</strong> {{ comentario.usuario }}<br>
-            <strong>Comentário:</strong> {{ comentario.comentario }}
-        </li>
-        {% endfor %}
-    </ul>
+
+<!-- Formulário -->
+<div class="container-fluid d-flex justify-content-center" style="margin-top: 50px;">
+    <div>
+    <h2 class="text-center">Deixe um Comentário</h2>
+    <form action="/submit_comment" method="POST">
+        <div class="form-group">
+            <label for="usuario">Nome de Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label><br>
+            <input type="senha" id="senha" name="senha" required>
+        </div>
+        <div class="form-group">
+            <label for="comentario">Comentário:</label><br>
+            <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea>
+        </div>
+        <button type="submit">Enviar Comentário</button>
+    </form>
+    </div>
 </div>
+
+<!-- Comentários -->
+<div class="container-fluid d-flex justify-content-center">
+    <div>
+        <h1 class="text-center">Comentários</h1>
+        <ul class="no-bullets">
+            {% for comentario in comentarios %}
+
+            <li>
+                <strong>Usuário:</strong> {{ comentario.usuario }}<br>
+                <strong>Comentário:</strong> {{ comentario.comentario }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 {% endblock %}
