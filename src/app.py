@@ -26,7 +26,7 @@ def submit_comment():
     db.session.commit()
     
     flash('Seu comentário foi enviado com sucesso!', 'success')
-    return redirect(url_for('/commentarios'))
+    return redirect(url_for('comment'))
 
 @app.route('/')
 def index():
