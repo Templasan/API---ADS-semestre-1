@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container-fluid comment-block">    
+    <div class="d-flex justify-content-center row mb-3">
+        <div class="d-flex flex-column col-md-8 mb-1">
+            <div class="card p-2 px-4">
+                <h2>Perfil</h2>
+                <div>
+                    <p>Detalhes da conta:</p>
+                    <table>
+                        <tr>
+                            <td>Nome:</td>
+                            <td>{{ account['nome'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td>******</td>
+                        </tr>
+                        <tr>
+                            <td>RF:</td>
+                            <td>{{ account['regfun'] }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

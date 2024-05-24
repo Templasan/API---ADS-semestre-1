@@ -1,32 +1,151 @@
-from flask import Flask, render_template, request, redirect, url_for, flash # type: ignore
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
+import MySQLdb.cursors, re, hashlib
+from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'teste'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comentarios.db'
-db = SQLAlchemy(app)
 
-class Comentario(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    usuario = db.Column(db.String(100), nullable=False)
-    senha = db.Column(db.String(100), nullable=False)
-    comentario = db.Column(db.Text, nullable=False)
+# Chave que vai cryptografar a senha no DB
+app.secret_key = 'your secret key'
 
-with app.app_context():
-    db.create_all()
+# Configuração do MySQL
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '1234'
+app.config['MYSQL_DB'] = 'scrumteach'
 
-@app.route('/submit_comment', methods=['POST'])
-def submit_comment():
-    usuario = request.form['usuario']
-    senha = request.form['senha']
-    comentario = request.form['comentario']
+# Inicialização do MySQL
+mysql = MySQL(app)
+
+# ------------------------------------------------------- Sistema Login -------------------------------------------------------
+# Página Login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    # Mensagem de erro
+    msg = ''
+    if request.method == 'POST' and 'regfun' in request.form and 'password' in request.form:
+        regfun = request.form['regfun']
+        password = request.form['password']
+        # Cryptografa senha
+        hash = password + app.secret_key
+        hash = hashlib.sha1(hash.encode())
+        password = hash.hexdigest()
+        # Checa se a conta ja existe
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE regfun = %s AND password = %s', (regfun, password,))
+        account = cursor.fetchone()
+        if account:
+            # Cria session
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['nome'] = account['nome']
+            return redirect(url_for('index'))
+        else:
+            msg = 'Usuário ou senha incorretos!'
+    return render_template('login.html', msg=msg)
+
+# Função para logout
+@app.route('/logout')
+def logout():
+    # Remove session data
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('username', None)
+   return redirect(url_for('login'))
+
+#Página Criar Conta
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Mensagem de erro
+    msg = ''
+    if request.method == 'POST' and 'regfun' in request.form and 'password' in request.form and 'nome' in request.form:
+        # Create variables for easy access
+        nome = request.form['nome']
+        password = request.form['password']
+        regfun = request.form['regfun']
+                # Checa se conta ja existe usando MySQL
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE regfun = %s', (regfun,))
+        account = cursor.fetchone()
+        # Erros caso conta ja exista oucampo preenchido errado
+        if account:
+            msg = 'Essa conta já existe!'
+        elif not re.match(r'[0-9]+', regfun):
+            msg = 'Seu registro de funcionario só pode conter números!'
+        elif not re.match(r'[A-Za-z]+', nome):
+            msg = 'Nome só pode conter letras!'
+        elif not nome or not password or not regfun:
+            msg = 'Preencha o formulário!'
+        else:
+            # Hash the password
+            hash = password + app.secret_key
+            hash = hashlib.sha1(hash.encode())
+            password = hash.hexdigest()
+            cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (nome, password, regfun,))
+            mysql.connection.commit()
+            msg = 'Registrado com sucesso!'
+    elif request.method == 'POST':
+        msg = 'Preencha o formulário!'
+    return render_template('register.html', msg=msg)
+
+# Página Perfil
+@app.route('/profile')
+def profile():
+    # Checa se o usuario esta logado
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
+        account = cursor.fetchone()
+        return render_template('profile.html', account=account)
+    return redirect(url_for('login'))
+
+
+# ------------------------------------------------------- Comentarios -------------------------------------------------------
+
+# Rota para exibir a lista de tarefas
+@app.route('/comentarios')
+def comentarios():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM cmtDB ORDER BY id DESC")
+    comment = cur.fetchall()
+    cur.close()
+    return render_template('comentarios.html', comment=comment)
+
+# Rota para adicionar uma nova tarefa
+@app.route('/add', methods=['POST'])
+def add_comment():
+    if request.method == 'POST':
+        nome=session['nome']
+        conteudo = request.form['conteudo']
+
+        now = datetime.now()
+        now_date = now.strftime("%d/%m/%Y, %H:%M")
+
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO cmtDB (nome, conteudo, now_date) VALUES (%s, %s, %s)", (nome, conteudo, now_date))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for('comentarios'))
     
-    novo_comentario = Comentario(usuario=usuario, senha=senha, comentario=comentario)
-    db.session.add(novo_comentario)
-    db.session.commit()
-    
-    flash('Seu comentário foi enviado com sucesso!', 'success')
-    return redirect(url_for('comment'))
+# Rota para atualizar uma tarefa
+@app.route('/update/<int:comment_id>', methods=['POST'])
+def update_comment(comment_id):
+    if request.method == 'POST':
+        nome=session['nome']
+        conteudo = request.form['conteudo']
+
+        now = datetime.now() # current date and time
+        now_date = now.strftime("%d/%m/%Y, %H:%M")
+
+        status = request.form['status']
+        cur = mysql.connection.cursor()
+        cur.execute("UPDATE cmtDB SET nome=%s, conteudo=%s, now_date=%s WHERE id=%s", (nome, now_date, comment_id))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for('comentarios'))
+
+# ------------------------------------------------------- Outras Páginas -------------------------------------------------------
 
 @app.route('/')
 def index():
@@ -48,12 +167,11 @@ def eventos():
 def ferramentas():
     return render_template('ferramentas.html')
 
-@app.route('/comentarios')
-def comment():
-    comentarios = Comentario.query.all()
-    return render_template('comentarios.html', comentarios=comentarios)
+@app.route('/avaliacao')
+def avaliacao():
+    return render_template('avaliacao.html')
 
-# Gabarito do quiz
+# ------------------------------------------------------- Avaliação -------------------------------------------------------
 answers = {
     "q1": "r4",
     "q2": "r2",
@@ -77,10 +195,6 @@ answers = {
     "q20": "r1",
 }
 
-@app.route('/avaliacao')
-def avaliacao():
-    return render_template('avaliacao.html')
-
 @app.route('/submit', methods=['POST'])
 def submit():
     score = 0
@@ -96,6 +210,7 @@ def submit():
             results[question] = False
 
     return render_template('resultado.html', score=score, total=total_questions, results=results)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
