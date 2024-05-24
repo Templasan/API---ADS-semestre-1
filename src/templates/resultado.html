@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+<!--Título-->
+{% block title %}Resultado{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Resultados</h2>
+    <p>Sua pontuação: {{ score }} de {{ total }}</p>
+
+    <ul>
+        {% for question, correct in results.items() %}
+            <li>
+                Pergunta {{ loop.index }}: 
+                {% if correct %}
+                    <span style="color: green;">Correta</span>
+                {% else %}
+                    <span style="color: red;">Errada</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

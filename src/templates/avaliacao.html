@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class=" gx-4 gx-lg-5 py-3 container-fluid text-center bg-gray" style="margin-top: 40px;" id="intro">
+<div class="gx-4 gx-lg-5 py-3 container-fluid text-center bg-gray" style="margin-top: 40px;" id="intro">
     <div>
         <h2 class="font-weight-light">Teste seu Conhecimento</h2>
         <p>
@@ -15,89 +15,80 @@
     <div><img class="img-fluid rounded pb-4 mb-lg-0" src="/static/images/avaliacao.png" alt="..." width="300" height="300"/></div>
 </div>
 
-<!-- Quiz -->
-<div class="container-fluid col-lg-9 mt-4" id="exercicios">
-    <div class="text-center">
-        <h3>Questionário</h3>
-    </div>
+<form action="{{ url_for('submit') }}" method="post">
+    <div class="container-fluid col-lg-9 mt-4" id="exercicios">
+        <div class="text-center">
+            <h3>Questionário</h3>
+        </div>
 
-    <!-- Pergunta 1 -->
-    <div class="card border-secondary mb-4">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 1</span>
-        </div>
-        <div class="card-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
-                <label class="form-check-label" for="q1_r1">
-                    Uma Sprint é uma reunião diária para discutir o progresso do projeto.
-                </label>
+        <!-- Pergunta 1 -->
+        <div class="card border-secondary mb-4">
+            <div class="card-header bg-blue text-white">
+                <span>Pergunta 1</span>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
-                <label class="form-check-label" for="q1_r2">
-                    Uma Sprint é uma reunião para revisar e ajustar o backlog do produto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
-                <label class="form-check-label" for="q1_r3">
-                    Uma Sprint é um período de tempo fixo durante o qual um conjunto de atividades específicas deve ser concluído.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
-                <label class="form-check-label" for="q1_r4">
-                    Uma Sprint é uma sessão de treinamento intensivo para os membros da equipe Scrum.
-                </label>
+            <div class="card-body">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                    <label class="form-check-label" for="q1_r1">
+                        Uma Sprint é uma reunião diária para discutir o progresso do projeto.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                    <label class="form-check-label" for="q1_r2">
+                        Uma Sprint é uma reunião para revisar e ajustar o backlog do produto.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                    <label class="form-check-label" for="q1_r3">
+                        Uma Sprint é um período de tempo fixo durante o qual um conjunto de atividades específicas deve ser concluído.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                    <label class="form-check-label" for="q1_r4">
+                        Uma Sprint é uma sessão de treinamento intensivo para os membros da equipe Scrum.
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Pergunta 2 -->
-    <div class="card border-secondary mb-4 ">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 2</span>
-        </div>
-        <div class="card-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
-                    Voluptatum, veritatis aliquid. Non, cupiditate similique.
-                </label>
+        <!-- Pergunta 2 -->
+        <div class="card border-secondary mb-4">
+            <div class="card-header bg-blue text-white">
+                <span>Pergunta 2</span>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
-                    Voluptatum, veritatis aliquid. Non, cupiditate similique.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
-                    Voluptatum, veritatis aliquid. Non, cupiditate similique.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
-                    Voluptatum, veritatis aliquid. Non, cupiditate similique.
-                </label>
+            <div class="card-body">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
+                    <label class="form-check-label" for="q2_r1">
+                        Voluptatum, veritatis aliquid. Non, cupiditate similique.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
+                    <label class="form-check-label" for="q2_r2">
+                        Voluptatum, veritatis aliquid. Non, cupiditate similique.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
+                    <label class="form-check-label" for="q2_r3">
+                        Voluptatum, veritatis aliquid. Non, cupiditate similique.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
+                    <label class="form-check-label" for="q2_r4">
+                        Voluptatum, veritatis aliquid. Non, cupiditate similique.
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
+
 
     <!-- Pergunta 3 -->
     <div class="card border-secondary mb-4 ">
@@ -109,29 +100,29 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r1" value="r1">
+                <label class="form-check-label" for="q3_r1">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r2" value="r2">
+                <label class="form-check-label" for="q3_r2">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r3" value="r3">
+                <label class="form-check-label" for="q3_r3">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r4" value="r4">
+                <label class="form-check-label" for="q3_r4">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
@@ -148,29 +139,29 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r1" value="r1">
+                <label class="form-check-label" for="q4_r1">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r2" value="r2">
+                <label class="form-check-label" for="q4_r2">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r3" value="r3">
+                <label class="form-check-label" for="q4_r3">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r4" value="r4">
+                <label class="form-check-label" for="q4_r4">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
@@ -187,36 +178,36 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, obcaecati atque voluptas et aliquid quia voluptates</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r1" value="r1">
+                <label class="form-check-label" for="q5_r1">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r2" value="r2">
+                <label class="form-check-label" for="q5_r2">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r3" value="r3">
+                <label class="form-check-label" for="q5_r3">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r4" value="r4">
+                <label class="form-check-label" for="q5_r4">
                     Voluptatum, veritatis aliquid. Non, cupiditate similique.
                 </label>
             </div>
         </div>
     </div>
     <div class="text-center mt-3 mb-5">
-        <button type="button ms-auto" class="btn btn-primary">Validar</button>
+        <button type="button ms-auto" class="btn btn-primary">Enviar</button>
     </div>
 </div>
 {% endblock %}

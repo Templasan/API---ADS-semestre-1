@@ -48,14 +48,39 @@ def eventos():
 def ferramentas():
     return render_template('ferramentas.html')
 
-@app.route('/avaliacao')
-def avaliacao():
-    return render_template('avaliacao.html')
-
 @app.route('/comentarios')
 def comment():
     comentarios = Comentario.query.all()
     return render_template('comentarios.html', comentarios=comentarios)
+
+# Gabarito do quiz
+answers = {
+    "q1": "r3",
+    "q2": "r2",
+    "q3": "r1",
+    "q4": "r4",
+    "q5": "r3"
+}
+
+@app.route('/avaliacao')
+def avaliacao():
+    return render_template('avaliacao.html')
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    score = 0
+    total_questions = len(answers)
+    results = {}
+
+    for question, correct_answer in answers.items():
+        user_answer = request.form.get(question)
+        if user_answer == correct_answer:
+            score += 1
+            results[question] = True
+        else:
+            results[question] = False
+
+    return render_template('resultado.html', score=score, total=total_questions, results=results)
 
 if __name__ == '__main__':
     app.run(debug=True)
