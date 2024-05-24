@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash # type: ignore
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -55,11 +55,26 @@ def comment():
 
 # Gabarito do quiz
 answers = {
-    "q1": "r3",
+    "q1": "r4",
     "q2": "r2",
-    "q3": "r1",
-    "q4": "r4",
-    "q5": "r3"
+    "q3": "r2",
+    "q4": "r3",
+    "q5": "r2",
+    "q6": "r4",
+    "q7": "r3",
+    "q8": "r3",
+    "q9": "r2",
+    "q10": "r2",
+    "q11": "r1",
+    "q12": "r3",
+    "q13": "r3",
+    "q14": "r2",
+    "q15": "r1",
+    "q16": "r4",
+    "q17": "r3",
+    "q18": "r1",
+    "q19": "r3",
+    "q20": "r1",
 }
 
 @app.route('/avaliacao')
