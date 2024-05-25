@@ -5,22 +5,28 @@
 
 {% block content %}
 
-<div class="container mt-5">
-    <h2>Resultados</h2>
-    <p>Sua pontuação: {{ score }} de {{ total }}</p>
-
-    <ul>
-        {% for question, correct in results.items() %}
-            <li>
-                Pergunta {{ loop.index }}: 
-                {% if correct %}
-                    <span style="color: green;">Correta</span>
-                {% else %}
-                    <span style="color: red;">Errada</span>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+<div class="container-fluid comment-block">    
+    <div class="d-flex justify-content-center mb-3">
+        <div class="d-flex flex-column col-md-8 mb-1 card">
+            <div class="card-header bg-blue text-white text-center"><h5 class="card-title m-0">Resultados</h5></div>
+            <div class="p-2 px-4">
+                <div class="card-body">
+                    <h5>Sua pontuação: {{ score }} de {{ total }}</h5>
+                    <ul class="no-bullets">
+                        {% for question, correct in results.items() %}
+                            <li>
+                                Pergunta {{ loop.index }}: 
+                                {% if correct %}
+                                    <span style="color: green;">Correta</span>
+                                {% else %}
+                                    <span style="color: red;">Errada</span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endblock %}

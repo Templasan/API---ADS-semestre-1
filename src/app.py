@@ -159,10 +159,6 @@ def introducao():
 def papeis():
     return render_template('papeis.html')
 
-@app.route('/eventos')
-def eventos():
-    return render_template('eventos.html')
-
 @app.route('/ferramentas')
 def ferramentas():
     return render_template('ferramentas.html')
@@ -211,26 +207,43 @@ def submit():
 
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 
+    # ------------------------------------------------------- Quiz -------------------------------------------------------
+
+questionsE = [
+    {
+        'question': 'Qual é a definição de uma Sprint na metodologia Scrum?',
+        'options': ['Uma Sprint é uma reunião diária para discutir o progresso do projeto.',
+                    'Uma Sprint é uma reunião para revisar e ajustar o backlog do produto.',
+                    'Uma Sprint é um período de tempo fixo durante o qual um conjunto de atividades específicas deve ser concluído.',
+                    'Uma Sprint é uma sessão de treinamento intensivo para os membros da equipe Scrum.'
+                    ],
+        'answer': 'Uma Sprint é um período de tempo fixo durante o qual um conjunto de atividades específicas deve ser concluído.'
+    },
+    {
+        'question': 'Qual é o objetivo do Sprint Planning na metodologia Scrum?',
+        'options': ['Rever o progresso do Sprint anterior.',
+                    'Priorizar as tarefas do backlog do produto.',
+                    'Determinar o que pode ser entregue no próximo Sprint e como será alcançado.',
+                    'Realizar uma revisão detalhada do produto já entregue aos clientes.'],
+        'answer': 'Determinar o que pode ser entregue no próximo Sprint e como será alcançado.'
+    }
+]
+
+@app.route('/eventos')
+def eventos():
+    score = 0
+    total=len(questionsE)
+    return render_template('eventos.html', questionsE=questionsE, score=score, total=total)
+
+@app.route('/submitEventos', methods=['POST'])
+def submitEventos():
+    score = 0
+    total=len(questionsE)
+    for question in questionsE:
+        user_answer = request.form.get(question['question'])
+        if user_answer == question['answer']:
+            score += 1
+    return render_template('eventos.html', questionsE=questionsE, score=score, total=total, scroll='exercicios')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    # ------------------------------------------------------- Quiz -------------------------------------------------------
-
-@app.route('/submit_quiz', methods=['POST'])
-def submit_quiz():
-    user_answers = {key: request.form[key] for key in request.form}
-    
-    score = 0
-    total_questions = len(user_answers)
-    results = {}
-
-    for question, user_answer in user_answers.items():
-        if user_answer == answers.get(question):
-            score += 1
-            results[question] = True
-        else:
-            results[question] = False
-
-    return render_template('quiz.html', score=score, total_questions=total_questions, results=results, answers=answers, questions=user_answers)
-

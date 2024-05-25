@@ -129,88 +129,36 @@
         <h3>Teste seu Conhecimento</h3>
     </div>
 
-    <!-- Pergunta 1 -->
-    <div class="card border-secondary mb-4">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 1</span>
-        </div>
-        <div class="card-body">
-            <p>Qual é a definição de uma Sprint na metodologia Scrum?</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
-                <label class="form-check-label" for="q1_r1">
-                    Uma Sprint é uma reunião diária para discutir o progresso do projeto.
-                </label>
+    <form action="/submitEventos" method="post">
+        {% for question in questionsE %}
+        <div class="card mb-1">
+            <div class="card-header bg-blue text-white">
+                <span>{{ question.question }}</span>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
-                <label class="form-check-label" for="q1_r2">
-                    Uma Sprint é uma reunião para revisar e ajustar o backlog do produto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
-                <label class="form-check-label" for="q1_r3">
-                    Uma Sprint é um período de tempo fixo durante o qual um conjunto de atividades específicas deve ser concluído.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
-                <label class="form-check-label" for="q1_r4">
-                    Uma Sprint é uma sessão de treinamento intensivo para os membros da equipe Scrum.
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            <div class="card-body">
+                {% for option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ question.question }}" id="{{ option }}" value="{{ option }}" required>
+                    <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-
-    <!-- Pergunta 2 -->
-    <div class="card border-secondary mb-4 ">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 2</span>
+        {% endfor %}
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Conferir</button>
         </div>
-        <div class="card-body">
-            <p>Qual é o objetivo do Sprint Planning na metodologia Scrum?</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
-                    Rever o progresso do Sprint anterior.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
-                    Priorizar as tarefas do backlog do produto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
-                    Determinar o que pode ser entregue no próximo Sprint e como será alcançado.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
-                    Realizar uma revisão detalhada do produto já entregue aos clientes.
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
-            </div>
-        </div>
+    </form>
+    <div class="text-center mt-3">
+        <h3>Resultado</h3>
+        <p>Sua nota é: {{ score }} / {{ total }}</p>
     </div>
 </div>
+
+{% if scroll %}
+<script>
+    document.location.hash = '#' + '{{ scroll }}';
+</script>
+{% endif %}
+
 {% endblock %}
