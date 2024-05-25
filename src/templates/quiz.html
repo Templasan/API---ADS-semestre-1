@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Quiz</h2>
+    <form action="/submit" method="post">
+        <!-- Questão 1 -->
+        <div class="question">
+            <p>Questão 1: qual a capital da frança?</p>
+            <input type="radio" id="q1" name="q1" value="r1">
+            <label for="q1">a) Londres</label><br>
+            <input type="radio" id="q2" name="q1" value="r2">
+            <label for="q2">b) Paris</label><br>
+            <input type="radio" id="q3" name="q1" value="r3">
+            <label for="q3">c) Berlin</label><br>
+            <input type="radio" id="q4" name="q1" value="r4">
+            <label for="q4">d) Roma</label><br>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question">
+            <p>Questão 2: qual o maior mamifero??</p>
+            <input type="radio" id="q5" name="q2" value="r1">
+            <label for="q5">a) Elefante</label><br>
+            <input type="radio" id="q6" name="q2" value="r2">
+            <label for="q6">b) baleia azul</label><br>
+            <input type="radio" id="q7" name="q2" value="r3">
+            <label for="q7">c) giraffa</label><br>
+            <input type="radio" id="q8" name="q2" value="r4">
+            <label for="q8">d) hipopotamo</label><br>
+        </div>
+
+        <!-- Adicionar questões aqui -->
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

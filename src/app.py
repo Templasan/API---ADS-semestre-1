@@ -214,3 +214,23 @@ def submit():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    # ------------------------------------------------------- Quiz -------------------------------------------------------
+
+@app.route('/submit_quiz', methods=['POST'])
+def submit_quiz():
+    user_answers = {key: request.form[key] for key in request.form}
+    
+    score = 0
+    total_questions = len(user_answers)
+    results = {}
+
+    for question, user_answer in user_answers.items():
+        if user_answer == answers.get(question):
+            score += 1
+            results[question] = True
+        else:
+            results[question] = False
+
+    return render_template('quiz.html', score=score, total_questions=total_questions, results=results, answers=answers, questions=user_answers)
+
