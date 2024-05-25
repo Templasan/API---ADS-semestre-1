@@ -406,7 +406,7 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865
 
 </details>
 
-<h2 align="center">Protótipo no Figma</h2>
+<h2 align="center">Site em HTML</h2>
 
 
 
@@ -414,7 +414,51 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd
 
 <p>Na segunda sprint entregamos protótipo do site desenvolvido no Figma funcionando em HTML.</p>
 
+<h2 align="center"><samp>3° SPRINT BACKLOG</samp></h2>
 
+<details>
+
+<table>
+  <tr>
+	<td>Rank</td>
+	<td>Prioridade</td>
+	<td>User Story</td>
+	<td>Status</td>
+  </tr>
+  <tr>
+	<td>15</td>
+	<td>Alta</td>
+	<td>Como um membro da equipe, eu quero aplicar o framework flask nas páginas desenvolvidas em html.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>16</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os papéis do time receba o seu conteúdo</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>17</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os eventos do scrum receba o seu conteúdo.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>18</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os artefatos recebam o seu conteúdo.</td>
+	<td>Concluído</td>
+  </tr>
+  <tr>
+	<td>19</td>
+	<td>Baixa</td>
+	<td>Como colaborador da empresa, eu quero que os formulários da página de avaliação sejam funcionais.</td>
+	<td>Concluído</td>
+  </tr>
+  
+</table>
+
+</details>
 
 <h2 align="center"><samp>TIME</samp></h2>
 
