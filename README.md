@@ -22,6 +22,39 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
 
 ![](/readme/TecnologiaUtilizadas.png)
 
+<table align="center">
+  <tr>
+    <th><b>Front-end</b></th>
+    <th><b>Back-end</b></th>
+    <th><b>Ferramentas</b></th>
+    <th><b>Comunicação</b></th>
+  </tr>
+  <tr>
+    <td>HTML</td>
+    <td>Python</td>
+    <td>Visual Studio Code</td>
+    <td>Whatsapp</td>
+  </tr>
+  <tr>
+    <td>CSS</td>
+    <td>Flask</td>
+    <td>Figma</td>
+    <td>Discord</td>
+  </tr>
+  <tr>
+    <td>Bootstrap</td>
+    <td></td>
+    <td>Git</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Github</td>
+    <td></td>
+  </tr>
+</table>
+
 <h2 align="center"><samp>PRODUCT BACKLOG</samp></h2>
 
 <details>
@@ -46,29 +79,37 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
   <tr>
     <td>2</td>
     <td>Alta</td>
-    <td>Pagina home</td>
+    <td>Página home</td>
     <td>Como colaborador da empresa, eu quero visualizar como será uma página inicial intuitiva no figma.</td>
     <td>1</td>
     <td>Concluído</td>
   </tr>
   <tr>
     <td>3</td>
-    <td>Alta</td>
-    <td>Pagina de papéis de um time</td>
+    <td>Média</td>
+    <td>Página de introdução</td>
     <td>Como colaborador da empresa, eu quero visualizar como será uma página para aprender sobre os papéis de um time scrum no Figma.</td>
     <td>1</td>
     <td>Concluído</td>
   </tr>
   <tr>
     <td>4</td>
-    <td>Media</td>
+    <td>Alta</td>
+    <td>Página de papéis de um time</td>
+    <td>Como colaborador da empresa, eu quero visualizar como será uma página para aprender sobre os papéis de um time scrum no Figma.</td>
+    <td>1</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Média</td>
     <td>Página dos eventos do scrum</td>
     <td>Como colaborador da empresa, eu quero visualizar como será uma página para aprender os eventos que são pilares da metodologia ágil no figma.</td>
     <td>1</td>
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>5</td>
+    <td>6</td>
     <td>Baixa</td>
     <td>Página de artefatos e ferramentas</td>
     <td>Como colaborador da empresa, eu quero visualizar como será a página para aprender sobre os artefatos e ferramentas utilizados pelo scrum no figma.</td>
@@ -76,23 +117,23 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>6</td>
-    <td>Media</td>
+    <td>7</td>
+    <td>Média</td>
     <td>Página de avaliação</td>
     <td>Como colaborador da empresa, eu quero visualizar como será a página para avaliar meus conhecimentos sobre os assuntos estudados no figma.</td>
     <td>1</td>
     <td>Concluído</td>
   </tr>
     <tr>
-    <td>7</td>
-    <td>Media</td>
+    <td>8</td>
+    <td>Média</td>
     <td>Ajustes e navegabilidade</td>
     <td>Como colaborador da empresa, eu quero ter uma experiência de usuário funcional, mesmo que seja apenas um protótipo. </td>
     <td>1</td>
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>8</td>
+    <td>9</td>
     <td>Alta</td>
     <td>Documentação no GitHub</td>
     <td>Como um membro da equipe, quero desenvolver e organizar a documentação do projeto no GitHub para realizar a entrega da sprint.</td>
@@ -100,7 +141,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>9</td>
+    <td>10</td>
     <td>Alta</td>
     <td>base.html</td>
     <td>Como um membro da equipe, desenvolver os elementos em comum entre as páginas em um arquivo base para reduzir códigos repetidos.</td>
@@ -108,7 +149,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>10</td>
+    <td>11</td>
     <td>Alta</td>
     <td>Pagina home</td>
     <td>Como colaborador da empresa, eu quero uma página inicial desenvolvida em html.</td>
@@ -116,7 +157,15 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>11</td>
+    <td>12</td>
+    <td>Média</td>
+    <td>Pagina de introdução</td>
+    <td>Como colaborador da empresa, eu quero uma página dos papéis da equipe desenvolvida em html.</td>
+    <td>2</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>13</td>
     <td>Alta</td>
     <td>Pagina de papéis de um time</td>
     <td>Como colaborador da empresa, eu quero uma página dos papéis da equipe desenvolvida em html.</td>
@@ -124,15 +173,15 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>12</td>
-    <td>Media</td>
+    <td>14</td>
+    <td>Média</td>
     <td>Página dos eventos do scrum</td>
     <td>Como colaborador da empresa, eu quero uma página de eventos do scrum desenvolvida em html.</td>
     <td>2</td>
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>13</td>
+    <td>15</td>
     <td>Baixa</td>
     <td>Página de artefatos e ferramentas</td>
     <td>Como colaborador da empresa, eu quero uma página para avaliação desenvolvida em html.</td>
@@ -140,63 +189,159 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>14</td>
-    <td>Media</td>
+    <td>16</td>
+    <td>Média</td>
     <td>Página de avaliação</td>
     <td>Como colaborador da empresa, eu quero uma página sobre artefatos e ferramentas desenvolvida em html.</td>
     <td>2</td>
     <td>Concluído</td>
   </tr>
   <tr>
-    <td>15</td>
+    <td>17</td>
+    <td>Alta</td>
+    <td>Documentação no GitHub</td>
+    <td>Como um membro da equipe, quero atualizar a documentação do projeto no GitHub para realizar a entrega da sprint.</td>
+    <td>2</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>18</td>
     <td>Alta</td>
     <td>Flask</td>
     <td>Como um membro da equipe, eu quero aplicar o framework flask nas páginas desenvolvidas em html.</td>
     <td>3</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
-    <td>16</td>
-    <td>Media</td>
+    <td>19</td>
+    <td>Média</td>
+    ⁣<td>Conteúdo da home</td>
+    <td>Como colaborador da empresa, eu quero que os &quot;placeholders&quot; da página home receba o seu conteúdo</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>Média</td>
+    ⁣<td>Conteúdo da introdução</td>
+    <td>Como colaborador da empresa, eu quero que os &quot;placeholders&quot; da página de introdução receba o seu conteúdo</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>Média</td>
     ⁣<td>Conteúdo dos papéis de um time</td>
     <td>Como colaborador da empresa, eu quero que os &quot;placeholders&quot; da página sobre os papéis do time receba o seu conteúdo</td>
     <td>3</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
     <tr>
-    <td>17</td>
-    <td>Media</td>
+    <td>22</td>
+    <td>Média</td>
     <td>Conteudo dos eventos</td>
     <td>Como colaborador da empresa, eu quero que os &quot;placeholders&quot; da página sobre os eventos do scrum receba o seu conteúdo.</td>
     <td>3</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
-    <td>18</td>
+    <td>23</td>
     <td>Media</td>
     <td>Conteúdo dos artefatos</td>
     <td>Como colaborador da empresa, eu quero que os &quot;placeholders&quot; da página sobre os artefatos recebam o seu conteúdo.</td>
     <td>3</td>
-    <td>A fazer</td>
+    <td>Concluído</td>
   </tr>
   <tr>
-    <td>19</td>
-    <td>Baixa</td>
+    <td>24</td>
+    <td>Alta</td>
     <td>Funcionalidade da avaliação</td>
     <td>Como colaborador da empresa, eu quero que os formulários da página de avaliação sejam funcionais.</td>
     <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>Alta</td>
+    <td>Sistema de Login</td>
+    <td>Como desenvolvedor, eu quero um sistema que cadastre e crie seçoes para os usuarios do site, armazenando as informaçoes em um database.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>Média</td>
+    <td>Páginas do Sistema de Login</td>
+    <td>Como colaborador da empresa, quero páginas para fazer cadastro, entar na minha conta e verificar minhas informaçoes.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>Média</td>
+    <td>Páginas de comentário</td>
+    <td>Como colaborador da empresa, quero uma página para deixar um comentário sobre o curso.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr> 
+  <tr>
+    <td>28</td>
+    <td>Alta</td>
+    <td>Sistema de comentário</td>
+    <td>Como desenvolvedor, quero um sistema que armazene os comentarios no banco dedados e os mostre na página do site.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>Média</td>
+    <td>Sistema de quiz</td>
+    <td>Como desenvolvedor, quero um sistema para os quizes das páginas de aula.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>Alta</td>
+    <td>Documentação no GitHub</td>
+    <td>Como um membro da equipe, quero atualizar a documentação do projeto no GitHub para realizar a entrega da sprint.</td>
+    <td>3</td>
+    <td>Concluído</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>Média</td>
+    <td>Aplicar quizes</td>
+    <td>Como colaborador da empresa, eu quero que todas as páginas de aula tenham quizes funcionais.</td>
+    <td>4</td>
     <td>A fazer</td>
   </tr>
   <tr>
-    <td>20</td>
-    <td>Media</td>
+    <td>32</td>
+    <td>Média</td>
+    <td>Aplicar quizes</td>
+    <td>Como colaborador da empresa, eu quero que meu desempenho na avaliação fique salvo no meu perfil.</td>
+    <td>4</td>
+    <td>A fazer</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>Média</td>
     <td>Melhorias no site</td>
     <td>Como colaborador da empresa, eu quero que site não possua bugs.</td>
     <td>4</td>
     <td>A fazer</td>
   </tr>
   <tr>
-    <td>21</td>
+    <td>34</td>
+    <td>Média</td>
+    <td>Melhorias no site</td>
+    <td>Como desenvolvedor, quero que o site seja hospedado em um servidor AWS (Amazon Web Server) para qualquer um com acesso à internet poder acessá-lo.</td>
+    <td>4</td>
+    <td>A fazer</td>
+  </tr>
+  <tr>
+    <td>35</td>
     <td>Alta</td>
     <td>Manual do usuário</td>
     <td>Como host do site, eu quero ter acesso ao manual do usuário no Github para saber instalar do projeto.</td>
@@ -204,7 +349,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
     <td>A fazer</td>
   </tr>
   <tr>
-    <td>22</td>
+    <td>36</td>
     <td>Alta</td>
     <td>Documentação Final</td>
     <td>Como um membro da equipe, quero finalizar a documentação do projeto no GitHub para realizar a finalizar o produto.</td>
@@ -366,38 +511,38 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865
 	<td>Status</td>
   </tr>
   <tr>
-	<td>9</td>
-	<td>Alta</td>
-	<td>Como um membro da equipe, desenvolver os elementos em comum entre as páginas em um arquivo base para reduzir códigos repetidos..</td>
+	<td>1</td>
+	<td>100</td>
+	<td>Como um membro da equipe, desenvolver os elementos em comum entre as páginas em um arquivo base para reduzir códigos repetidos.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
-	<td>10</td>
-	<td>Alta</td>
-	<td>Como colaborador da empresa, eu quero uma página inicial desenvolvida em html..</td>
+	<td>2</td>
+	<td>95</td>
+	<td>Como colaborador da empresa, eu quero uma página inicial desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
-	<td>11</td>
-	<td>Alta</td>
+	<td>3</td>
+	<td>90</td>
 	<td>Como colaborador da empresa, eu quero uma página dos papéis da equipe desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
-	<td>12</td>
-	<td>Média</td>
+	<td>4</td>
+	<td>85</td>
 	<td>Como colaborador da empresa, eu quero uma página de eventos do scrum desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
-	<td>13</td>
+	<td>5</td>
 	<td>Baixa</td>
 	<td>Como colaborador da empresa, eu quero uma página para avaliação desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
-	<td>14</td>
-	<td>Média</td>
+	<td>6</td>
+	<td>80</td>
 	<td>Como colaborador da empresa, eu quero uma página sobre artefatos e ferramentas desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
@@ -419,43 +564,133 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd
 <details>
 
 <table>
+
   <tr>
 	<td>Rank</td>
 	<td>Prioridade</td>
 	<td>User Story</td>
 	<td>Status</td>
   </tr>
+
   <tr>
-	<td>15</td>
-	<td>Alta</td>
-	<td>Como um membro da equipe, eu quero aplicar o framework flask nas páginas desenvolvidas em html.</td>
+	<td>1</td>
+	<td>100</td>
+	<td>Como um membro da equipe, quero aplicar o framework flask nas páginas desenvolvidas em html para desenvolver o back-end.</td>
 	<td>Concluído</td>
   </tr>
+
   <tr>
-	<td>16</td>
-	<td>Média</td>
-	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os papéis do time receba o seu conteúdo</td>
+	<td>2</td>
+	<td>95</td>
+	<td>Como colaborador da empresa, quero que os "placeholders" da página home receba o seu conteúdo</td>
 	<td>Concluído</td>
   </tr>
+
   <tr>
-	<td>17</td>
-	<td>Média</td>
-	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os eventos do scrum receba o seu conteúdo.</td>
+	<td>3</td>
+	<td>90</td>
+	<td>Como colaborador da empresa, quero que os "placeholders" da página de introdução receba o seu conteúdo</td>
 	<td>Concluído</td>
   </tr>
+
   <tr>
-	<td>18</td>
-	<td>Média</td>
-	<td>Como colaborador da empresa, eu quero que os "placeholders" da página sobre os artefatos recebam o seu conteúdo.</td>
+	<td>4</td>
+	<td>85</td>
+	<td>Como colaborador da empresa, quero que os "placeholders" da página sobre os papéis do time receba o seu conteúdo</td>
 	<td>Concluído</td>
   </tr>
+
   <tr>
-	<td>19</td>
-	<td>Baixa</td>
-	<td>Como colaborador da empresa, eu quero que os formulários da página de avaliação sejam funcionais.</td>
+	<td>5</td>
+	<td>80</td>
+	<td>Como colaborador da empresa, quero que os "placeholders" da página sobre os eventos do scrum receba o seu conteúdo.</td>
 	<td>Concluído</td>
   </tr>
   
+  <tr>
+	<td>6</td>
+	<td>75</td>
+	<td>Como colaborador da empresa, quero que os "placeholders" da página sobre os artefatos recebam o seu conteúdo.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>7</td>
+	<td>70</td>
+	<td>Como colaborador da empresa, quero questões na página de avaliação para validar meu conhecimento.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>8</td>
+	<td>65</td>
+	<td>Como colaborador da empresa, quero que quesõtes para os formulários da página de avaliação.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>9</td>
+	<td>60</td>
+	<td>Como colaborador da empresa, quero que os formulários da página de avaliação retornem meu desempenho no questionário.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>10</td>
+	<td>55</td>
+	<td>Como colaborador da empresa, quero uma página com os resultados para saber meu desempenho no questionário.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>11</td>
+	<td>50</td>
+	<td>Como colaborador da empresa, quero uma página de comentarios para avaliar o curso.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>12</td>
+	<td>45</td>
+	<td>Como membro da equipe, quero um sistema utilizando banco de dados MySQL para armazenar contas de empregados e seus comentários.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>13</td>
+	<td>40</td>
+	<td>Como colaborador da empresa, quero uma página para entrar na minha conta ou me cadastrar caso eu não tenha uma conta.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>14</td>
+	<td>35</td>
+	<td>Como colaborador da empresa, quero uma página para verificar as informações da minha conta.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>15</td>
+	<td>30</td>
+	<td>Como desenvolvedor, quero o sistema de quiz das páginas de aulas funcionando para futuramente aplicar em todas as páginas.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>16</td>
+	<td>25</td>
+	<td>Como desenvolvedor, quero que o README no github esteja atualizado com as informações do que foi realizado nessa sprint.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>17</td>
+	<td>20</td>
+	<td>Como desenvolvedor, quero elaborar uma apresentação para o sprint review.</td>
+	<td>Concluído</td>
+  </tr>
+
 </table>
 
 </details>
@@ -479,14 +714,9 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd
     <td><a href="https://github.com/Templasan">Github</a></td>
   </tr>
   <tr>
-    <td>Luiz Felipe Monteiro Dos Santos</td>
+    <td>Tiago Maneca Bortolini de Castro</td>
     <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
-  </tr>
-  <tr>
-    <td>Guilherme Henrique Cassula</td>
-    <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
+    <td><a href="https://github.com/deusimortal">Github</a></td>
   </tr>
   <tr>
     <td>Matheus Di Sabatino Pires</td>
@@ -496,12 +726,11 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd
   <tr>
     <td>Léo de Paula Naito</td>
     <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
+    <td><a href="https://github.com/LNaito">Github</a></td>
   </tr>
     <tr>
     <td>Pablo</td>
     <td>ST</td>
-    <td><a href="https://github.com/">Github</a></td>
+    <td><a href="https://github.com/Rafa0709">Github</a></td>
   </tr>
-  
 </table>
