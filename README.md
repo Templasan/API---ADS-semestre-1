@@ -319,7 +319,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
   <tr>
     <td>32</td>
     <td>Média</td>
-    <td>Aplicar quizes</td>
+    <td>Desempenho no Perfil</td>
     <td>Como colaborador da empresa, eu quero que meu desempenho na avaliação fique salvo no meu perfil.</td>
     <td>4</td>
     <td>A fazer</td>
@@ -335,7 +335,7 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
   <tr>
     <td>34</td>
     <td>Média</td>
-    <td>Melhorias no site</td>
+    <td>AWS</td>
     <td>Como desenvolvedor, quero que o site seja hospedado em um servidor AWS (Amazon Web Server) para qualquer um com acesso à internet poder acessá-lo.</td>
     <td>4</td>
     <td>A fazer</td>
@@ -489,11 +489,9 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
 
 </details>
 
-<h2 align="center">Protótipo no Figma</h2>
+<h3 align="center">Protótipo no Figma</h3>
 
 <h4 align="center"><a href="https://youtu.be/bF1j0FQ-05o">Assistir pelo Youtube</a></h4>
-
-
 
 https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865-4047-be1f-37d4581ec30a
 
@@ -551,9 +549,7 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865
 
 </details>
 
-<h2 align="center">Site em HTML</h2>
-
-
+<h3 align="center">Site em HTML</h3>
 
 https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd-490a-95b8-b2fd715e697c
 
@@ -692,8 +688,25 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/126552071/04671c1b-a3bd
   </tr>
 
 </table>
-
 </details>
+
+<h3 align="center">Adição de conteúdo às Páginas</h3>
+
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/139f3ca9-922b-4bcf-a554-dbd8da31cce2
+
+<p>Na terceira sprint, os placeholders das páginas foram substituídos pelos conteúdos e materiais de aula, aprimorando a usabilidade e a apresentação visual do site.</p>
+
+<h3 align="center">Sistema de Login e Comentários</h3>
+
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/bc14040c-0965-48bd-8e3c-0cb3a316a2d7
+
+<p>Também foi desenvolvido um sistema de login que permite aos usuários acessarem suas contas, registrarem novos perfis e visualizarem informações detalhadas em seus perfis, além de um sistema de comentários integrado, todos alimentados por um banco de dados MySQL.</p>
+
+<h3 align="center">Sistema de Avalição e Quiz</h3>
+
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/84e82704-e723-4805-a84f-65a3f504a41a
+
+<p>Por fim, foram aplicadas as funcionalidades de avaliações, permitindo aos usuários verificar seu desempenho, além do sistema de quizzes nas páginas das aulas, enriquecendo ainda mais a experiência de aprendizado.</p>
 
 <h2 align="center"><samp>TIME</samp></h2>
 
