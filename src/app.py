@@ -12,7 +12,7 @@ app.secret_key = 'your secret key'
 # Configuração do MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
+app.config['MYSQL_PASSWORD'] = 'fatec'
 app.config['MYSQL_DB'] = 'scrumteach'
 
 # Inicialização do MySQL
@@ -38,7 +38,7 @@ def login():
         if account:
             # Cria session
             session['loggedin'] = True
-            session['id'] = account['id']
+            session['idAc'] = account['idAc']
             session['nome'] = account['nome']
             return redirect(url_for('index'))
         else:
@@ -50,7 +50,7 @@ def login():
 def logout():
     # Remove session data
    session.pop('loggedin', None)
-   session.pop('id', None)
+   session.pop('idAc', None)
    session.pop('username', None)
    return redirect(url_for('login'))
 
@@ -95,7 +95,7 @@ def profile():
     # Checa se o usuario esta logado
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
+        cursor.execute('SELECT * FROM accounts WHERE idAc = %s', (session['idAc'],))
         account = cursor.fetchone()
         return render_template('profile.html', account=account)
     return redirect(url_for('login'))
@@ -107,7 +107,16 @@ def profile():
 @app.route('/comentarios')
 def comentarios():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM cmtDB ORDER BY id DESC")
+
+    sql = "SELECT \
+          accounts.nome, \
+          cmtDB.conteudo, \
+          cmtDB.now_date \
+          FROM cmtDB \
+          INNER JOIN accounts ON cmtDB.idAC = accounts.idAc \
+          ORDER BY id DESC"
+    
+    cur.execute(sql)
     comment = cur.fetchall()
     cur.close()
     return render_template('comentarios.html', comment=comment)
@@ -116,14 +125,14 @@ def comentarios():
 @app.route('/add', methods=['POST'])
 def add_comment():
     if request.method == 'POST':
-        nome=session['nome']
+        idAc=session['idAc']
         conteudo = request.form['conteudo']
 
         now = datetime.now()
         now_date = now.strftime("%d/%m/%Y, %H:%M")
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO cmtDB (nome, conteudo, now_date) VALUES (%s, %s, %s)", (nome, conteudo, now_date))
+        cur.execute("INSERT INTO cmtDB (idAc, conteudo, now_date) VALUES (%s, %s, %s)", (idAc, conteudo, now_date))
         mysql.connection.commit()
         cur.close()
         return redirect(url_for('comentarios'))
@@ -132,15 +141,14 @@ def add_comment():
 @app.route('/update/<int:comment_id>', methods=['POST'])
 def update_comment(comment_id):
     if request.method == 'POST':
-        nome=session['nome']
+        idAc=session['idAc']
         conteudo = request.form['conteudo']
 
         now = datetime.now() # current date and time
         now_date = now.strftime("%d/%m/%Y, %H:%M")
 
-        status = request.form['status']
         cur = mysql.connection.cursor()
-        cur.execute("UPDATE cmtDB SET nome=%s, conteudo=%s, now_date=%s WHERE id=%s", (nome, now_date, comment_id))
+        cur.execute("UPDATE cmtDB SET idAc=%s, conteudo=%s, now_date=%s WHERE id=%s", (idAc, now_date, comment_id))
         mysql.connection.commit()
         cur.close()
         return redirect(url_for('comentarios'))
