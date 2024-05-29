@@ -534,13 +534,13 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/958fc707-2865
   </tr>
   <tr>
 	<td>5</td>
-	<td>Baixa</td>
+	<td>80</td>
 	<td>Como colaborador da empresa, eu quero uma página para avaliação desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
   <tr>
 	<td>6</td>
-	<td>80</td>
+	<td>75</td>
 	<td>Como colaborador da empresa, eu quero uma página sobre artefatos e ferramentas desenvolvida em html.</td>
 	<td>Concluído</td>
   </tr>
@@ -722,8 +722,13 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/84e82704-e723
     <td><a href="https://github.com/HumbertoIshii">Github</a></td>
   </tr>
   <tr>
-    <td>João Victor Dos Reis Santos</td>
+    <td>Matheus Di Sabatino Pires</td>
     <td>SM</td>
+    <td><a href="https://github.com/Omathzao">Github</a></td>
+  </tr>
+  <tr>
+    <td>João Victor Dos Reis Santos</td>
+    <td>ST</td>
     <td><a href="https://github.com/Templasan">Github</a></td>
   </tr>
   <tr>
@@ -732,17 +737,12 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/84e82704-e723
     <td><a href="https://github.com/deusimortal">Github</a></td>
   </tr>
   <tr>
-    <td>Matheus Di Sabatino Pires</td>
-    <td>ST</td>
-    <td><a href="https://github.com/Omathzao">Github</a></td>
-  </tr>
-  <tr>
     <td>Léo de Paula Naito</td>
     <td>ST</td>
     <td><a href="https://github.com/LNaito">Github</a></td>
   </tr>
     <tr>
-    <td>Pablo</td>
+    <td>Pablo Rafael Rosa da Silva</td>
     <td>ST</td>
     <td><a href="https://github.com/Rafa0709">Github</a></td>
   </tr>
