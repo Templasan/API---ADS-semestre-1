@@ -12,16 +12,16 @@
                     <a class="nav-link active" href="{{ url_for('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="{{ url_for('register') }}">Register</a>
+                    <a class="nav-link text-dark" href="{{ url_for('register') }}">Registrar</a>
                 </li>
             </ul>
         </div>
         <div class="card-body">
             <form action="{{ url_for('login') }}" method="post">
                 <input type="text" name="regfun" placeholder="RF" id="regfun" required>
-                <input type="password" name="password" placeholder="Password" id="password" required>
+                <input type="password" name="password" placeholder="Senha" id="password" required>
                 <div class="msg">{{ msg }}</div>
-                <input class="btn btn-primary btn-login" type="submit" value="Login">
+                <input class="btn btn-primary btn-login" type="submit" value="Entrar">
             </form>
         </div>
     </div>

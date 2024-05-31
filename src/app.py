@@ -12,7 +12,7 @@ app.secret_key = 'your secret key'
 # Configuração do MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'fatec'
+app.config['MYSQL_PASSWORD'] = '1234'
 app.config['MYSQL_DB'] = 'scrumteach'
 
 # Inicialização do MySQL
@@ -43,6 +43,7 @@ def login():
             return redirect(url_for('index'))
         else:
             msg = 'Usuário ou senha incorretos!'
+        cursor.close()
     return render_template('login.html', msg=msg)
 
 # Função para logout
@@ -64,7 +65,7 @@ def register():
         nome = request.form['nome']
         password = request.form['password']
         regfun = request.form['regfun']
-                # Checa se conta ja existe usando MySQL
+        # Checa se conta ja existe usando MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE regfun = %s', (regfun,))
         account = cursor.fetchone()
@@ -85,6 +86,7 @@ def register():
             cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (nome, password, regfun,))
             mysql.connection.commit()
             msg = 'Registrado com sucesso!'
+        cursor.close()
     elif request.method == 'POST':
         msg = 'Preencha o formulário!'
     return render_template('register.html', msg=msg)
@@ -94,10 +96,18 @@ def register():
 def profile():
     # Checa se o usuario esta logado
     if 'loggedin' in session:
+        # Dados da conta
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE idAc = %s', (session['idAc'],))
         account = cursor.fetchone()
-        return render_template('profile.html', account=account)
+        cursor.close()
+        # Score Avaliações
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM scoreAv WHERE idAc = %s', (session['idAc'],))
+        avScore = cursor.fetchall()
+        cursor.close()
+
+        return render_template('profile.html', account=account, avScore=avScore)
     return redirect(url_for('login'))
 
 
@@ -106,7 +116,7 @@ def profile():
 # Rota para exibir a lista de tarefas
 @app.route('/comentarios')
 def comentarios():
-    cur = mysql.connection.cursor()
+    cursor = mysql.connection.cursor()
 
     sql = "SELECT \
           accounts.nome, \
@@ -116,12 +126,12 @@ def comentarios():
           INNER JOIN accounts ON cmtDB.idAC = accounts.idAc \
           ORDER BY id DESC"
     
-    cur.execute(sql)
-    comment = cur.fetchall()
-    cur.close()
+    cursor.execute(sql)
+    comment = cursor.fetchall()
+    cursor.close()
     return render_template('comentarios.html', comment=comment)
 
-# Rota para adicionar uma nova tarefa
+# Rota para adicionar um novo comentário
 @app.route('/add', methods=['POST'])
 def add_comment():
     if request.method == 'POST':
@@ -131,26 +141,10 @@ def add_comment():
         now = datetime.now()
         now_date = now.strftime("%d/%m/%Y, %H:%M")
 
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO cmtDB (idAc, conteudo, now_date) VALUES (%s, %s, %s)", (idAc, conteudo, now_date))
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO cmtDB (idAc, conteudo, now_date) VALUES (%s, %s, %s)", (idAc, conteudo, now_date))
         mysql.connection.commit()
-        cur.close()
-        return redirect(url_for('comentarios'))
-    
-# Rota para atualizar uma tarefa
-@app.route('/update/<int:comment_id>', methods=['POST'])
-def update_comment(comment_id):
-    if request.method == 'POST':
-        idAc=session['idAc']
-        conteudo = request.form['conteudo']
-
-        now = datetime.now() # current date and time
-        now_date = now.strftime("%d/%m/%Y, %H:%M")
-
-        cur = mysql.connection.cursor()
-        cur.execute("UPDATE cmtDB SET idAc=%s, conteudo=%s, now_date=%s WHERE id=%s", (idAc, now_date, comment_id))
-        mysql.connection.commit()
-        cur.close()
+        cursor.close()
         return redirect(url_for('comentarios'))
 
 # ------------------------------------------------------- Outras Páginas -------------------------------------------------------
@@ -212,6 +206,16 @@ def submit():
             results[question] = True
         else:
             results[question] = False
+
+    idAc=session['idAc']
+    scorePorcento = str(int((score / total_questions) * 100)) + '%'
+    now = datetime.now()
+    now_date = now.strftime("%d/%m/%Y, %H:%M")
+
+    cursor = mysql.connection.cursor()
+    cursor.execute("INSERT INTO scoreAv (idAc, scorePorcento, now_date) VALUES (%s, %s, %s)", (idAc, scorePorcento, now_date))
+    mysql.connection.commit()
+    cursor.close()
 
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 

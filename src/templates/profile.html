@@ -24,6 +24,23 @@
                             <td>{{ account['regfun'] }}</td>
                         </tr>
                     </table>
+                    <h3 class="text-center mt-3">Avaliações</h3>
+                    <table class="table text-center table-bordered table-striped">
+                        <thead class="bg-blue text-white">
+                            <tr>
+                                <th>Desempenho</th>
+                                <th>Dia da Avaliação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for avScore in avScore %}
+                        <tr>
+                            <td>{{ avScore[2] }}</td>
+                            <td>{{ avScore[3] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
