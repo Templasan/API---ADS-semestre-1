@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import MySQLdb.cursors, re, hashlib
 from datetime import datetime
+import random
 
 app = Flask(__name__)
 
@@ -245,6 +246,13 @@ questionsE = [
 def eventos():
     score = 0
     total=len(questionsE)
+
+    # Randomiza ordem das perguntas
+    for question in questionsE:
+        randQuestions = question['options']
+        random.shuffle(randQuestions)
+        question['options'] = randQuestions
+
     return render_template('eventos.html', questionsE=questionsE, score=score, total=total)
 
 @app.route('/submitEventos', methods=['POST'])
