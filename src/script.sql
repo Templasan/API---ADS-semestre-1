@@ -17,3 +17,12 @@ now_date varchar(20),
 PRIMARY KEY (id),
 FOREIGN KEY (idAc) REFERENCES accounts(idAc)
 );
+
+create table scoreAv (
+id int auto_increment,
+idAc int NOT NULL,
+scorePorcento varchar(5) not null,
+now_date varchar(20),
+PRIMARY KEY (id),
+FOREIGN KEY (idAc) REFERENCES accounts(idAc)
+);
