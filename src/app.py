@@ -199,24 +199,21 @@ def submit():
     score = 0
     total_questions = len(answers)
     results = {}
+    all_answered = True
 
-    for question, correct_answer in answers.items():
+    for question in answers:
         user_answer = request.form.get(question)
-        if user_answer == correct_answer:
+        if user_answer is None:
+            all_answered = False
+        elif user_answer == answers[question]:
             score += 1
             results[question] = True
         else:
             results[question] = False
 
-    idAc=session['idAc']
-    scorePorcento = str(int((score / total_questions) * 100)) + '%'
-    now = datetime.now()
-    now_date = now.strftime("%d/%m/%Y, %H:%M")
-
-    cursor = mysql.connection.cursor()
-    cursor.execute("INSERT INTO scoreAv (idAc, scorePorcento, now_date) VALUES (%s, %s, %s)", (idAc, scorePorcento, now_date))
-    mysql.connection.commit()
-    cursor.close()
+    if not all_answered:
+        error_message = "Por favor, responda todas as perguntas antes de enviar o formulário."
+        return render_template('avaliacao.html', error_message=error_message)
 
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 

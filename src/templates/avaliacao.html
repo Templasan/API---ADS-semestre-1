@@ -15,6 +15,12 @@
     <div><img class="img-fluid rounded pb-4 mb-lg-0" src="/static/images/avaliacao.png" alt="..." width="300" height="300"/></div>
 </div>
 
+{% if error_message %}
+<div class="alert alert-danger" role="alert">
+    {{ error_message }}
+</div>
+{% endif %}
+
 <form action="{{ url_for('submit') }}" method="post">
     <div class="container-fluid col-lg-9 mt-4" id="exercicios">
         <div class="text-center">
