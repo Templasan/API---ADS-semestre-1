@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 
-<!--Título-->
 {% block title %}Avaliação{% endblock %}
 
 {% block content %}
-
-<div class="gx-4 gx-lg-5 py-3 container-fluid text-center bg-lightgray" style="margin-top: 40px;" id="intro">
+<div class="gx-4 gx-lg-5 py-3 container-fluid text-center bg-gray" style="margin-top: 40px;" id="intro">
     <div>
         <h2 class="font-weight-light">Teste seu Conhecimento</h2>
         <p>
@@ -16,7 +14,7 @@
 </div>
 
 {% if error_message %}
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger text-center" role="alert">
     {{ error_message }}
 </div>
 {% endif %}
@@ -35,31 +33,32 @@
             <div class="card-body">
                 <p>Qual é o principal objetivo do Daily Scrum?</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1" {% if user_answers and user_answers.get('q1') == 'r1' %}checked{% endif %}>
                     <label class="form-check-label" for="q1_r1">
                         Revisar o código fonte.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2" {% if user_answers and user_answers.get('q1') == 'r2' %}checked{% endif %}>
                     <label class="form-check-label" for="q1_r2">
                         Realizar uma retrospectiva do sprint anterior.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3" {% if user_answers and user_answers.get('q1') == 'r3' %}checked{% endif %}>
                     <label class="form-check-label" for="q1_r3">
                         Planejar as tarefas do dia.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4" {% if user_answers and user_answers.get('q1') == 'r4' %}checked{% endif %}>
                     <label class="form-check-label" for="q1_r4">
                         Identificar e remover impedimentos.
                     </label>
                 </div>
             </div>
         </div>
+
 
         <!-- Pergunta 2 -->
         <div class="card border-secondary mb-4">
@@ -69,25 +68,25 @@
             <div class="card-body">
                 <p>Quem é responsável por priorizar o Product Backlog?</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1" {% if user_answers and user_answers.get('q2') == 'r1' %}checked{% endif %}>
                     <label class="form-check-label" for="q2_r1">
                         Scrum Team.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2" {% if user_answers and user_answers.get('q2') == 'r2' %}checked{% endif %}>
                     <label class="form-check-label" for="q2_r2">
                         Product Owner.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3" {% if user_answers and user_answers.get('q2') == 'r3' %}checked{% endif %}>
                     <label class="form-check-label" for="q2_r3">
                         Scrum Master.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4" {% if user_answers and user_answers.get('q2') == 'r4' %}checked{% endif %}>
                     <label class="form-check-label" for="q2_r4">
                         Stakeholders.
                     </label>
@@ -106,28 +105,28 @@
             <p>Qual é o artefato principal utilizado para rastrear o trabalho realizado durante um Sprint?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q3" id="q3_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r1" value="r1" {% if user_answers and user_answers.get('q3') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q3_r1">
                     Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q3" id="q3_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r2" value="r2" {% if user_answers and user_answers.get('q3') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q3_r2">
                     Sprint Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q3" id="q3_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r3" value="r3" {% if user_answers and user_answers.get('q3') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q3_r3">
                     Incremento.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q3" id="q3_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q3" id="q3_r4" value="r4" {% if user_answers and user_answers.get('q3') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q3_r4">
                     Burndown Chart.
                 </label>
@@ -145,28 +144,28 @@
             <p>O que é o Sprint Planning?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q4" id="q4_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r1" value="r1" {% if user_answers and user_answers.get('q4') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q4_r1">
                     Uma reunião diária para atualizar o progresso do sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q4" id="q4_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r2" value="r2" {% if user_answers and user_answers.get('q4') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q4_r2">
                     Uma sessão de revisão do sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q4" id="q4_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r3" value="r3" {% if user_answers and user_answers.get('q4') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q4_r3">
                     Um evento onde o Scrum Team planeja o trabalho a ser realizado no próximo Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q4" id="q4_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q4" id="q4_r4" value="r4" {% if user_answers and user_answers.get('q4') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q4_r4">
                     Uma retrospectiva para analisar o desempenho do Product Owner.
                 </label>
@@ -184,28 +183,28 @@
             <p>Qual é o propósito do Sprint Review?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q5" id="q5_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r1" value="r1" {% if user_answers and user_answers.get('q5') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q5_r1">
                     Avaliar o desempenho do Scrum Master.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q5" id="q5_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r2" value="r2" {% if user_answers and user_answers.get('q5') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q5_r2">
                     Apresentar o Incremento ao Product Owner e aos stakeholders.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q5" id="q5_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r3" value="r3" {% if user_answers and user_answers.get('q5') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q5_r3">
                     Priorizar o Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q5" id="q5_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q5" id="q5_r4" value="r4" {% if user_answers and user_answers.get('q5') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q5_r4">
                     Discutir os problemas do Sprint anterior.
                 </label>
@@ -223,28 +222,28 @@
             <p>Quem é responsável por garantir que o Scrum seja entendido e implementado corretamente?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q6" id="q6_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q6" id="q6_r1" value="r1" {% if user_answers and user_answers.get('q6') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q6_r1">
                     Stakeholders.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q6" id="q6_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q6" id="q6_r2" value="r2" {% if user_answers and user_answers.get('q6') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q6_r2">
                     Scrum Team.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q6" id="q6_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q6" id="q6_r3" value="r3" {% if user_answers and user_answers.get('q6') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q6_r3">
                     Product Owner.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q6" id="q6_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q6" id="q6_r4" value="r4" {% if user_answers and user_answers.get('q6') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q6_r4">
                     Scrum Master.
                 </label>
@@ -262,28 +261,28 @@
             <p>Qual é a principal diferença entre o Product Backlog e o Sprint Backlog?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q7" id="q7_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q7" id="q7_r1" value="r1" {% if user_answers and user_answers.get('q7') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q7_r1">
                     O Sprint Backlog é mantido pelo Product Owner, enquanto o Product Backlog é mantido pelo Scrum Master.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q7" id="q7_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q7" id="q7_r2" value="r2" {% if user_answers and user_answers.get('q7') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q7_r2">
                     O Sprint Backlog é uma lista de requisitos de alta prioridade, enquanto o Product Backlog é uma lista de todos os requisitos do projeto.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q7" id="q7_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q7" id="q7_r3" value="r3" {% if user_answers and user_answers.get('q7') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q7_r3">
                     O Sprint Backlog é o conjunto de itens selecionados do Product Backlog para a Sprint, enquanto o Product Backlog é uma lista ordenada de todos os requisitos do produto.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q7" id="q7_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q7" id="q7_r4" value="r4" {% if user_answers and user_answers.get('q7') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q7_r4">
                     O Product Backlog é revisado diariamente durante o Sprint Planning, enquanto o Sprint Backlog é revisado durante o Sprint Review.
                 </label>
@@ -301,28 +300,28 @@
             <p>Quem é responsável por garantir que o Product Backlog seja visível, transparente e claro para todos?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q8" id="q8_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q8" id="q8_r1" value="r1" {% if user_answers and user_answers.get('q8') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q8_r1">
                     Scrum Team.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q8" id="q8_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q8" id="q8_r2" value="r2" {% if user_answers and user_answers.get('q8') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q8_r2">
                     Stakeholders.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q8" id="q8_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q8" id="q8_r3" value="r3" {% if user_answers and user_answers.get('q8') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q8_r3">
                     Product Owner.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q8" id="q8_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q8" id="q8_r4" value="r4" {% if user_answers and user_answers.get('q8') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q8_r4">
                     Scrum Master.
                 </label>
@@ -340,28 +339,28 @@
             <p>Qual é o objetivo da Sprint Retrospective?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q9" id="q9_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q9" id="q9_r1" value="r1" {% if user_answers and user_answers.get('q9') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q9_r1">
                     Revisar o Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q9" id="q9_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q9" id="q9_r2" value="r2" {% if user_answers and user_answers.get('q9') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q9_r2">
                     Identificar o que foi feito bem e o que pode ser melhorado no próximo Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q9" id="q9_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q9" id="q9_r3" value="r3" {% if user_answers and user_answers.get('q9') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q9_r3">
                     Priorizar as tarefas para o próximo Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q9" id="q9_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q9" id="q9_r4" value="r4" {% if user_answers and user_answers.get('q9') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q9_r4">
                     Planejar as entregas finais do projeto.
                 </label>
@@ -379,28 +378,28 @@
             <p>Quem é responsável por decidir quando um Incremento é "Done"?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q10" id="q10_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q10" id="q10_r1" value="r1" {% if user_answers and user_answers.get('q10') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q10_r1">
                     Scrum Team.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q10" id="q10_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q10" id="q10_r2" value="r2" {% if user_answers and user_answers.get('q10') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q10_r2">
                     Product Owner.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q10" id="q10_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q10" id="q10_r3" value="r3" {% if user_answers and user_answers.get('q10') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q10_r3">
                     Stakeholders.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q10" id="q10_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q10" id="q10_r4" value="r4" {% if user_answers and user_answers.get('q10') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q10_r4">
                     Scrum Master.
                 </label>
@@ -418,28 +417,28 @@
             <p>Quem é responsável por garantir que o Product Backlog seja adaptado para otimizar o valor do trabalho realizado?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q11" id="q11_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q11" id="q11_r1" value="r1" {% if user_answers and user_answers.get('q11') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q11_r1">
                     Product Owner.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q11" id="q11_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q11" id="q11_r2" value="r2" {% if user_answers and user_answers.get('q11') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q11_r2">
                     Scrum Master.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q11" id="q11_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q11" id="q11_r3" value="r3" {% if user_answers and user_answers.get('q11') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q11_r3">
                     Desenvolvedores.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q11" id="q11_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q11" id="q11_r4" value="r4" {% if user_answers and user_answers.get('q11') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q11_r4">
                     Stakeholders.
                 </label>
@@ -457,28 +456,28 @@
             <p>Qual é o principal artefato usado para rastrear o progresso do Sprint e prever quando o trabalho será concluído?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q12" id="q12_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q12" id="q12_r1" value="r1" {% if user_answers and user_answers.get('q12') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q12_r1">
                     Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q12" id="q12_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q12" id="q12_r2" value="r2" {% if user_answers and user_answers.get('q12') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q12_r2">
                     Incremento.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q12" id="q12_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q12" id="q12_r3" value="r3" {% if user_answers and user_answers.get('q12') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q12_r3">
                     Burndown Chart.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q12" id="q12_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q12" id="q12_r4" value="r4" {% if user_answers and user_answers.get('q12') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q12_r4">
                     Sprint Backlog.
                 </label>
@@ -496,28 +495,28 @@
             <p>Durante a Sprint Review, o que deve ser discutido em relação ao Incremento?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q13" id="q13_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q13" id="q13_r1" value="r1" {% if user_answers and user_answers.get('q13') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q13_r1">
                     O tempo gasto em cada tarefa.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q13" id="q13_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q13" id="q13_r2" value="r2" {% if user_answers and user_answers.get('q13') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q13_r2">
                     Os impedimentos enfrentados pelo time durante o Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q13" id="q13_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q13" id="q13_r3" value="r3" {% if user_answers and user_answers.get('q13') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q13_r3">
                     O progresso feito em relação aos critérios de aceitação definidos no Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q13" id="q13_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q13" id="q13_r4" value="r4" {% if user_answers and user_answers.get('q13') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q13_r4">
                     As mudanças planejadas para o próximo Sprint.
                 </label>
@@ -535,28 +534,28 @@
             <p>Qual é o papel do Scrum Master durante o Sprint Planning?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q14" id="q14_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q14" id="q14_r1" value="r1" {% if user_answers and user_answers.get('q14') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q14_r1">
                     Ele define as tarefas específicas que cada membro da equipe deve realizar durante o Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q14" id="q14_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q14" id="q14_r2" value="r2" {% if user_answers and user_answers.get('q14') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q14_r2">
                     Ele facilita a reunião e garante que todos os participantes entendam o objetivo da Sprint e o trabalho a ser realizado.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q14" id="q14_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q14" id="q14_r3" value="r3" {% if user_answers and user_answers.get('q14') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q14_r3">
                     Ele prioriza os itens do Product Backlog.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q14" id="q14_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q14" id="q14_r4" value="r4" {% if user_answers and user_answers.get('q14') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q14_r4">
                     Ele revisa o progresso do Sprint anterior e ajusta o plano para o próximo Sprint.
                 </label>
@@ -574,28 +573,28 @@
             <p>O que é um "Sprint" em Scrum?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q15" id="q15_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q15" id="q15_r1" value="r1" {% if user_answers and user_answers.get('q15') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q15_r1">
                     Um período de tempo fixo durante o qual o Scrum Team completa o trabalho acordado.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q15" id="q15_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q15" id="q15_r2" value="r2" {% if user_answers and user_answers.get('q15') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q15_r2">
                     Uma reunião diária para discutir o progresso do projeto.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q15" id="q15_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q15" id="q15_r3" value="r3" {% if user_answers and user_answers.get('q15') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q15_r3">
                     Um evento para revisar o trabalho concluído.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q15" id="q15_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q15" id="q15_r4" value="r4" {% if user_answers and user_answers.get('q15') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q15_r4">
                     Uma sessão de planejamento para determinar o que será feito no próximo ciclo.
                 </label>
@@ -613,28 +612,28 @@
             <p>Quais são os três pilares do Scrum?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q16" id="q16_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q16" id="q16_r1" value="r1" {% if user_answers and user_answers.get('q16') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q16_r1">
                     Escopo, Tempo, Custo.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q16" id="q16_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q16" id="q16_r2" value="r2" {% if user_answers and user_answers.get('q16') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q16_r2">
                     Planejamento, Execução, Entrega.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q16" id="q16_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q16" id="q16_r3" value="r3" {% if user_answers and user_answers.get('q16') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q16_r3">
                     Priorização, Colaboração, Comunicação.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q16" id="q16_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q16" id="q16_r4" value="r4" {% if user_answers and user_answers.get('q16') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q16_r4">
                     Transparência, Inspeção, Adaptação.
                 </label>
@@ -652,28 +651,28 @@
             <p>Qual é a diferença entre um Sprint e um Incremento?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q17" id="q17_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q17" id="q17_r1" value="r1" {% if user_answers and user_answers.get('q17') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q17_r1">
                     Um Sprint é um período de tempo fixo, enquanto um Incremento é uma parte do Product Backlog concluída.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q17" id="q17_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q17" id="q17_r2" value="r2" {% if user_answers and user_answers.get('q17') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q17_r2">
                     Um Sprint é uma reunião, enquanto um Incremento é uma lista de tarefas a serem realizadas.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q17" id="q17_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q17" id="q17_r3" value="r3" {% if user_answers and user_answers.get('q17') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q17_r3">
                     Um Sprint é uma parte do Product Backlog, enquanto um Incremento é uma versão potencialmente entregável do produto.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q17" id="q17_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q17" id="q17_r4" value="r4" {% if user_answers and user_answers.get('q17') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q17_r4">
                     Um Sprint é uma lista de requisitos do produto, enquanto um Incremento é um marco no cronograma do projeto.
                 </label>
@@ -691,28 +690,28 @@
             <p>Quais são as três perguntas que são respondidas durante o Daily Scrum?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q18" id="q18_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q18" id="q18_r1" value="r1" {% if user_answers and user_answers.get('q18') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q18_r1">
                     O que fiz ontem? O que farei hoje? Há algum impedimento?.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q18" id="q18_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q18" id="q18_r2" value="r2" {% if user_answers and user_answers.get('q18') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q18_r2">
                     Qual é o objetivo do Sprint? Como posso ajudar o time? O que farei após a reunião?.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q18" id="q18_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q18" id="q18_r3" value="r3" {% if user_answers and user_answers.get('q18') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q18_r3">
                     Quais são os próximos passos do projeto? Quanto tempo levará para completá-los? Quais são os riscos?.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q18" id="q18_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q18" id="q18_r4" value="r4" {% if user_answers and user_answers.get('q18') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q18_r4">
                     Quais são os problemas do projeto? Quem é responsável por resolvê-los? Como podemos melhorar?.
                 </label>
@@ -730,28 +729,28 @@
             <p>Qual é a principal responsabilidade do Product Owner durante o Sprint Planning?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q19" id="q19_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q19" id="q19_r1" value="r1" {% if user_answers and user_answers.get('q19') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q19_r1">
                     Determinar como o trabalho será realizado.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q19" id="q19_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q19" id="q19_r2" value="r2" {% if user_answers and user_answers.get('q19') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q19_r2">
                     Estabelecer o Sprint Goal.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q19" id="q19_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q19" id="q19_r3" value="r3" {% if user_answers and user_answers.get('q19') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q19_r3">
                     Selecionar itens do Product Backlog para o Sprint.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q19" id="q19_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q19" id="q19_r4" value="r4" {% if user_answers and user_answers.get('q19') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q19_r4">
                     Facilitar a reunião.
                 </label>
@@ -769,28 +768,28 @@
             <p>Quais são os benefícios do Scrum?</p>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q20" id="q20_r1" value="r1">
+                <input class="form-check-input" type="radio" name="q20" id="q20_r1" value="r1" {% if user_answers and user_answers.get('q20') == 'r1' %}checked{% endif %}>
                 <label class="form-check-label" for="q20_r1">
                     Maior previsibilidade, transparência e satisfação do cliente.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q20" id="q20_r2" value="r2">
+                <input class="form-check-input" type="radio" name="q20" id="q20_r2" value="r2" {% if user_answers and user_answers.get('q20') == 'r2' %}checked{% endif %}>
                 <label class="form-check-label" for="q20_r2">
                     Menor envolvimento do cliente e maior foco técnico.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q20" id="q20_r3" value="r3">
+                <input class="form-check-input" type="radio" name="q20" id="q20_r3" value="r3" {% if user_answers and user_answers.get('q20') == 'r3' %}checked{% endif %}>
                 <label class="form-check-label" for="q20_r3">
                     Menor colaboração entre os membros da equipe.
                 </label>
             </div>
             
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="q20" id="q20_r4" value="r4">
+                <input class="form-check-input" type="radio" name="q20" id="q20_r4" value="r4" {% if user_answers and user_answers.get('q20') == 'r4' %}checked{% endif %}>
                 <label class="form-check-label" for="q20_r4">
                     Maior controle do Scrum Master sobre o processo.
                 </label>

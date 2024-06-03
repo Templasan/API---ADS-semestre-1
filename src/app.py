@@ -194,27 +194,33 @@ answers = {
     "q20": "r1",
 }
 
+
 @app.route('/submit', methods=['POST'])
 def submit():
-    score = 0
-    total_questions = len(answers)
-    results = {}
+    user_answers = {}
     all_answered = True
 
     for question in answers:
         user_answer = request.form.get(question)
+        user_answers[question] = user_answer
         if user_answer is None:
             all_answered = False
-        elif user_answer == answers[question]:
+
+    if not all_answered:
+        error_message = "Por favor, responda todas as perguntas antes de enviar o formulário."
+        return render_template('avaliacao.html', error_message=error_message, user_answers=user_answers)
+
+    score = 0
+    results = {}
+    for question, correct_answer in answers.items():
+        user_answer = user_answers.get(question)
+        if user_answer == correct_answer:
             score += 1
             results[question] = True
         else:
             results[question] = False
 
-    if not all_answered:
-        error_message = "Por favor, responda todas as perguntas antes de enviar o formulário."
-        return render_template('avaliacao.html', error_message=error_message)
-
+    total_questions = len(answers)
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 
     # ------------------------------------------------------- Quiz -------------------------------------------------------
