@@ -13,7 +13,7 @@ app.secret_key = 'your secret key'
 # Configuração do MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
+app.config['MYSQL_PASSWORD'] = 'fatec'
 app.config['MYSQL_DB'] = 'scrumteach'
 
 # Inicialização do MySQL
@@ -221,6 +221,17 @@ def submit():
             results[question] = False
 
     total_questions = len(answers)
+
+    idAc=session['idAc']
+    scorePorcento = str(int((score / total_questions) * 100)) + '%'
+    now = datetime.now()
+    now_date = now.strftime("%d/%m/%Y, %H:%M")
+
+    cursor = mysql.connection.cursor()
+    cursor.execute("INSERT INTO scoreAv (idAc, scorePorcento, now_date) VALUES (%s, %s, %s)", (idAc, scorePorcento, now_date))
+    mysql.connection.commit()
+    cursor.close()
+
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 
     # ------------------------------------------------------- Quiz -------------------------------------------------------
