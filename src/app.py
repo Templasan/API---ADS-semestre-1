@@ -222,15 +222,17 @@ def submit():
 
     total_questions = len(answers)
 
-    idAc=session['idAc']
-    scorePorcento = str(int((score / total_questions) * 100)) + '%'
-    now = datetime.now()
-    now_date = now.strftime("%d/%m/%Y, %H:%M")
+    # Salva Desempenho no DB se logado
+    if 'loggedin' in session:
+        idAc=session['idAc']
+        scorePorcento = str(int((score / total_questions) * 100)) + '%'
+        now = datetime.now()
+        now_date = now.strftime("%d/%m/%Y, %H:%M")
 
-    cursor = mysql.connection.cursor()
-    cursor.execute("INSERT INTO scoreAv (idAc, scorePorcento, now_date) VALUES (%s, %s, %s)", (idAc, scorePorcento, now_date))
-    mysql.connection.commit()
-    cursor.close()
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO scoreAv (idAc, scorePorcento, now_date) VALUES (%s, %s, %s)", (idAc, scorePorcento, now_date))
+        mysql.connection.commit()
+        cursor.close()
 
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 
