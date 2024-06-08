@@ -4,7 +4,7 @@
 
 {% block content %}
 <center>
-		<div class="login card"  style="margin: 250px 0;">
+		<div class="login card"  style="margin: 150px 0;">
 			<div class="card-header">
 			<h4>Criar Conta</h4>
 			<ul class="nav nav-tabs card-header-tabs">
@@ -28,4 +28,19 @@
 			</div>
 		</div>
 </center>
+
+<style>
+    .ft{
+        position:absolute;
+        bottom:0px;
+        width: 100%;
+    }
+
+    @media (max-width: 500px) {
+        .ft{
+            position:relative;
+            bottom:auto;
+        }
+    }
+</style>
 {% endblock %}

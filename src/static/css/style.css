@@ -126,6 +126,7 @@ html {
 /* Comentários */
 .comment-block {
   margin-top: 70px !important;
+  min-height: 70vh;
 }
 
 .comment-time {
@@ -159,9 +160,4 @@ html {
   .login{
     width: 95%;
   }
-}
-.ft{
-  position:absolute;
-  bottom:0px;
-  width: 100%;
 }
