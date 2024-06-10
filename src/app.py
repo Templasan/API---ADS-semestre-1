@@ -154,18 +154,6 @@ def add_comment():
 def index():
     return render_template('index.html')
 
-@app.route('/introducao')
-def introducao():
-    return render_template('introducao.html')
-
-@app.route('/papeis')
-def papeis():
-    return render_template('papeis.html')
-
-@app.route('/ferramentas')
-def ferramentas():
-    return render_template('ferramentas.html')
-
 @app.route('/avaliacao')
 def avaliacao():
     return render_template('avaliacao.html')
@@ -237,6 +225,136 @@ def submit():
     return render_template('resultado.html', score=score, total=total_questions, results=results)
 
     # ------------------------------------------------------- Quiz -------------------------------------------------------
+
+questionsF = [
+    {
+        'question': 'Qual é a função do Product Backlog no Scrum?',
+        'options': ['Detalhar as tarefas diárias dos membros da equipe.',
+                    'Listar todos os produtos concorrentes no mercado.',
+                    'Priorizar e listar todas as funcionalidades desejadas do produto.',
+                    'Documentar todos os erros encontrados no sistema.'
+                    ],
+        'answer': 'Priorizar e listar todas as funcionalidades desejadas do produto.'
+    },
+    {
+        'question': 'O que é o Sprint Backlog no Scrum?',
+        'options': ['Uma lista de todas as tarefas que precisam ser concluídas durante o projeto.',
+                    'Uma lista de itens do Product Backlog selecionados para o Sprint, junto com um plano para entregá-los.',
+                    'Uma lista de impedimentos que precisam ser resolvidos pela equipe.',
+                    'Um documento detalhando as funcionalidades do produto final.'],
+        'answer': 'Uma lista de itens do Product Backlog selecionados para o Sprint, junto com um plano para entregá-los.'
+    }
+]
+
+@app.route('/ferramentas')
+def ferramentas():
+    score = 0
+    total=len(questionsI)
+
+    # Randomiza ordem das perguntas
+    for question in questionsP:
+        randQuestions = question['options']
+        random.shuffle(randQuestions)
+        question['options'] = randQuestions
+
+    return render_template('ferramentas.html', questionsF=questionsF, score=score, total=total)
+
+@app.route('/submitFerramentas', methods=['POST'])
+def submitFerramentas():
+    score = 0
+    total=len(questionsF)
+    for question in questionsF:
+        user_answer = request.form.get(question['question'])
+        if user_answer == question['answer']:
+            score += 1
+    return render_template('ferramentas.html', questionsF=questionsF, score=score, total=total, scroll='exercicios')
+
+questionsI = [
+    {
+        'question': 'Qual a importância do pilar de Transparência no Scrum?',
+        'options': ['Adaptar o projeto para resolução de problemas.',
+                    'Permitir que somente um membro saiba como estão os processos do projeto.',
+                    'Permitir com que todos da equipe estejam em sintonia e com uma visão clara do andamento e processos do projeto.',
+                    'Ajudar no desempenho pessoal de cada um dentro da equipe.'
+                    ],
+        'answer': 'Permitir com que todos da equipe estejam em sintonia e com uma visão clara do andamento e processos do projeto.'
+    },
+    {
+        'question': 'Qual desses não é um motivo para utilizar o Scrum?',
+        'options': ['Análise lenta dos processos.',
+                    'Simplicidade na resolução de problemas.',
+                    'Facilidade no aprendizado da metodologia.',
+                    'Melhora na qualidade do produto.'],
+        'answer': 'Análise lenta dos processos.'
+    }
+]
+
+@app.route('/introducao')
+def introducao():
+    score = 0
+    total=len(questionsI)
+
+    # Randomiza ordem das perguntas
+    for question in questionsP:
+        randQuestions = question['options']
+        random.shuffle(randQuestions)
+        question['options'] = randQuestions
+
+    return render_template('introducao.html', questionsI=questionsI, score=score, total=total)
+
+@app.route('/submitIntroducao', methods=['POST'])
+def submitIntroducao():
+    score = 0
+    total=len(questionsI)
+    for question in questionsI:
+        user_answer = request.form.get(question['question'])
+        if user_answer == question['answer']:
+            score += 1
+    return render_template('introducao.html', questionsI=questionsI, score=score, total=total, scroll='exercicios')
+
+
+questionsP = [
+    {
+        'question': 'Qual é a função do Product Owner no Scrum?',
+        'options': ['Responsável por liderar as reuniões diárias do Scrum.',
+                    'Encarregado de definir os critérios de aceitação das histórias de usuário.',
+                    'Responsável por garantir que o time Scrum atenda às expectativas dos stakeholders.',
+                    'Encarregado de manter a equipe motivada e produtiva durante o sprint.'
+                    ],
+        'answer': 'Encarregado de definir os critérios de aceitação das histórias de usuário.'
+    },
+    {
+        'question': 'Qual é o papel do Scrum Master no método Scrum?',
+        'options': ['O Scrum Master é responsável por definir as metas do projeto.',
+                    'O Scrum Master é o líder técnico da equipe de desenvolvimento.',
+                    'O Scrum Master protege a equipe de desenvolvimento de interferências externas.',
+                    'O Scrum Master é responsável por aprovar todas as mudanças no produto.'],
+        'answer': 'O Scrum Master protege a equipe de desenvolvimento de interferências externas.'
+    }
+]
+
+@app.route('/papeis')
+def papeis():
+    score = 0
+    total=len(questionsP)
+
+    # Randomiza ordem das perguntas
+    for question in questionsP:
+        randQuestions = question['options']
+        random.shuffle(randQuestions)
+        question['options'] = randQuestions
+
+    return render_template('papeis.html', questionsP=questionsP, score=score, total=total)
+
+@app.route('/submitPapeis', methods=['POST'])
+def submitPapeis():
+    score = 0
+    total=len(questionsP)
+    for question in questionsP:
+        user_answer = request.form.get(question['question'])
+        if user_answer == question['answer']:
+            score += 1
+    return render_template('papeis.html', questionsP=questionsP, score=score, total=total, scroll='exercicios')
 
 questionsE = [
     {

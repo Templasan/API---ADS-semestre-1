@@ -78,88 +78,36 @@ Adaptação: Caso haja problemas, a adaptação é necessária para resolvê-los
         <h3>Teste seu Conhecimento</h3>
     </div>
 
-    <!-- Pergunta 1 -->
-    <div class="card border-secondary mb-4">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 1</span>
-        </div>
-        <div class="card-body">
-            <p>Qual a importância do pilar de Transparência no Scrum?</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
-                <label class="form-check-label" for="q1_r1">
-                    Adaptar o projeto para resolução de problemas. 
-                </label>
+    <form action="/submitIntroducao" method="post">
+        {% for question in questionsI %}
+        <div class="card mb-1">
+            <div class="card-header bg-blue text-white">
+                <span>{{ question.question }}</span>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
-                <label class="form-check-label" for="q1_r2">
-                    Permitir que somente um membro saiba como estão os processos do projeto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
-                <label class="form-check-label" for="q1_r3">
-                    Permitir com que todos da equipe estejam em sintonia e com uma visão clara do andamento e processos do projeto. 
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
-                <label class="form-check-label" for="q1_r4">
-                    Ajudar no desempenho pessoal de cada um dentro da equipe. 
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            <div class="card-body">
+                {% for option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ question.question }}" id="{{ option }}" value="{{ option }}" required>
+                    <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-
-    <!-- Pergunta 2 -->
-    <div class="card border-secondary mb-4 ">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 2</span>
+        {% endfor %}
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Conferir</button>
         </div>
-        <div class="card-body">
-            <p>Qual desses não é um motivo para utilizar o Scrum?</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
-                    Análise lenta dos processos.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
-                    Simplicidade na resolução de problemas. 
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
-                    Facilidade no aprendizado da metodologia.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
-                    Melhora na qualidade do produto.
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
-            </div>
-        </div>
+    </form>
+    <div class="text-center mt-3">
+        <h3>Resultado</h3>
+        <p>Sua nota é: {{ score }} / {{ total }}</p>
     </div>
 </div>
+
+{% if scroll %}
+<script>
+    document.location.hash = '#' + '{{ scroll }}';
+</script>
+{% endif %}
+
 {% endblock %}

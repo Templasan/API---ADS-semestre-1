@@ -91,88 +91,36 @@
         <h3>Teste seu Conhecimento</h3>
     </div>
 
-    <!-- Pergunta 1 -->
-    <div class="card border-secondary mb-4">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 1</span>
-        </div>
-        <div class="card-body">
-            <p>Qual é a função do Product Backlog no Scrum??</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r1" value="r1">
-                <label class="form-check-label" for="q1_r1">
-                    Detalhar as tarefas diárias dos membros da equipe.
-                </label>
+    <form action="/submitFerramentas" method="post">
+        {% for question in questionsF %}
+        <div class="card mb-1">
+            <div class="card-header bg-blue text-white">
+                <span>{{ question.question }}</span>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r2" value="r2">
-                <label class="form-check-label" for="q1_r2">
-                    Listar todos os produtos concorrentes no mercado.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r3" value="r3">
-                <label class="form-check-label" for="q1_r3">
-                    Priorizar e listar todas as funcionalidades desejadas do produto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q1" id="q1_r4" value="r4">
-                <label class="form-check-label" for="q1_r4">
-                    Documentar todos os erros encontrados no sistema.
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
+            <div class="card-body">
+                {% for option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ question.question }}" id="{{ option }}" value="{{ option }}" required>
+                    <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-
-    <!-- Pergunta 2 -->
-    <div class="card border-secondary mb-4 ">
-    
-        <div class="card-header bg-blue text-white">
-        <span>Pergunta 2</span>
+        {% endfor %}
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Conferir</button>
         </div>
-        <div class="card-body">
-            <p>O que é o Sprint Backlog no Scrum?</p>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r1" value="r1">
-                <label class="form-check-label" for="q2_r1">
-                   Uma lista de todas as tarefas que precisam ser concluídas durante o projeto.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r2" value="r2">
-                <label class="form-check-label" for="q2_r2">
-                    Uma lista de itens do Product Backlog selecionados para o Sprint, junto com um plano para entregá-los.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r3" value="r3">
-                <label class="form-check-label" for="q2_r3">
-                    Uma lista de impedimentos que precisam ser resolvidos pela equipe.
-                </label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="q2" id="q2_r4" value="r4">
-                <label class="form-check-label" for="q2_r4">
-                    Um documento detalhando as funcionalidades do produto final.
-                </label>
-            </div>
-            <div class="text-center mt-3">
-                <button type="button ms-auto" class="btn btn-primary">Conferir</button>
-            </div>
-        </div>
+    </form>
+    <div class="text-center mt-3">
+        <h3>Resultado</h3>
+        <p>Sua nota é: {{ score }} / {{ total }}</p>
     </div>
 </div>
+
+{% if scroll %}
+<script>
+    document.location.hash = '#' + '{{ scroll }}';
+</script>
+{% endif %}
+
 {% endblock %}
