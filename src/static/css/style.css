@@ -161,3 +161,6 @@ html {
     width: 95%;
   }
 }
+body {
+  padding-top: 80px;
+}
