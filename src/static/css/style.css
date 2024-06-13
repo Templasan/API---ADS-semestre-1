@@ -98,14 +98,13 @@ html {
     overflow-y: hidden; /* PODE ALTERAR PARA "hidden" CASO NÃO QUEIRA SCROLL VERTICAL */
     white-space: nowrap; /* IMPEDE A QUEBRA DE LINHA */
     scrollbar-width: none; /* Esconde Scrollbar Firefox e Opera*/
+    justify-content:center;
 }
 
 @media (max-width: 500px) {
   .mobile{
     overflow-x: scroll; /* Scroll Horizontal Mobile */
-  }
-  .mobile ul{
-    margin-left: 290px; /* Gambiarra para o scroll não comer a introdução */
+    justify-content: left;
   }
 }
 
@@ -160,7 +159,8 @@ html {
   .login{
     width: 95%;
   }
+  body {
+    padding-top: 40px;
+  }
 }
-body {
-  padding-top: 80px;
-}
+
