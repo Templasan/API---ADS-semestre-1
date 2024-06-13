@@ -708,6 +708,76 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/84e82704-e723
 
 <p>Por fim, foram aplicadas as funcionalidades de avaliações, permitindo aos usuários verificar seu desempenho, além do sistema de quizzes nas páginas das aulas, enriquecendo ainda mais a experiência de aprendizado.</p>
 
+<h2 align="center"><samp>4° SPRINT BACKLOG</samp></h2>
+
+<details>
+
+<table>
+
+  <tr>
+	<td>Rank</td>
+	<td>Prioridade</td>
+	<td>User Story</td>
+	<td>Status</td>
+  </tr>
+
+  <tr>
+	<td>31</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que todas as páginas de aula tenham quizes funcionais.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>32</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que meu desempenho na avaliação fique salvo no meu perfil.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>33</td>
+	<td>Média</td>
+	<td>Como colaborador da empresa, eu quero que site não possua bugs.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>34</td>
+	<td>Média</td>
+	<td>Como desenvolvedor, quero que o site seja hospedado em um servidor AWS (Amazon Web Server) para qualquer um com acesso à internet poder acessá-lo.</td>
+	<td>Concluído</td>
+  </tr>
+
+  <tr>
+	<td>35</td>
+	<td>Alta</td>
+	<td>Como host do site, eu quero ter acesso ao manual do usuário no Github para saber instalar do projeto.</td>
+	<td>Concluído</td>
+  </tr>
+  
+  <tr>
+	<td>36</td>
+	<td>Alta</td>
+	<td>Como um membro da equipe, quero finalizar a documentação do projeto no GitHub para realizar a finalizar o produto.</td>
+	<td>Concluído</td>
+  </tr>
+
+  
+
+</table>
+</details>
+
+
+
+
+
+
+
+
+
+
+
 <h2 align="center"><samp>TIME</samp></h2>
 
 <table align="center">
