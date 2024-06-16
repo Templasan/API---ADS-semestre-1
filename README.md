@@ -792,6 +792,27 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/e6b354cd-ad4b
 
 <p>Por fim, foram corrigidos bugs no site, resultando em um site totalmente adaptável que pode ser acessado de qualquer dispositivo, oferecendo uma experiência fluida e consistente para todos os usuários.</p>
 
+### Pré requisitos
++ Ter GitHub instalado
++ Ter Python 3.0 ou superior
++ Ter MySQL Server instalado
+
+### Manual
++ Abra o cmd na pasta aonde deseja instalar o projeto
++ Execute os comandos
+  - git clone https://github.com/Templasan/API---ADS-semestre-1.git
+  - cd
+  - python -m venv venv
+  - pip install -r requirements.txt
+  - flask run
++ Entre no link "https//localhost:5000"
+  
+  
+
+
+
+
+
 <h2 align="center"><samp>TIME</samp></h2>
 
 <table align="center">
