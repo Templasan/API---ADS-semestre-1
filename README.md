@@ -43,14 +43,20 @@ O objetivo do nosso trabalho é fornecer uma plataforma educacional abrangente e
   </tr>
   <tr>
     <td>Bootstrap</td>
-    <td></td>
+    <td>AWS</td>
     <td>Git</td>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td></td>
+    <td>MySQL Server</td>
     <td>Github</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>MySQL Workbench</td>
     <td></td>
   </tr>
 </table>
@@ -768,15 +774,23 @@ https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/84e82704-e723
 </table>
 </details>
 
+<h3 align="center">Salvamento do desempenho no perfil e hospedagem na AWS</h3>
 
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/b8829afd-914a-4d8e-81fe-49759c211c0f
 
+<p>Na entrega final da quarta Sprint, concluímos com êxito a implementação do salvamento do desempenho da avaliação sobre SCRUM na página de perfil do usuário, integrando-se ao banco de dados MySQL. Adicionalmente, o site foi hospedado na AWS (Amazon Web Services), possibilitando acesso de qualquer lugar com conexão à internet.</p>
 
+<h3>Funcionalidade dos quizzes</h3>
 
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/5ce8b84d-2428-4c7f-a46a-440868027599
 
+<p>Além disso, nesta sprint, a funcionalidade dos quizzes foi aplicada para todas as páginas de aula, com a ordem das alternativas agora sendo aleatória.</p>
 
+<h3>Correção de bugs e responsividade</h3>
 
+https://github.com/Templasan/API---ADS-semestre-1/assets/163201524/e6b354cd-ad4b-4871-9905-21a3269c518b
 
-
+<p>Por fim, foram corrigidos bugs no site, resultando em um site totalmente adaptável que pode ser acessado de qualquer dispositivo, oferecendo uma experiência fluida e consistente para todos os usuários.</p>
 
 <h2 align="center"><samp>TIME</samp></h2>
 
